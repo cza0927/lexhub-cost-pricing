@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LexHub 成本核算与定价方案</title>
+<style>
+  :root{
+    --a:#2563eb; --a-bg:#eff6ff; --a-line:#bfdbfe;
+    --b:#d97706; --b-bg:#fffbeb; --b-line:#fde68a;
+    --g:#059669; --g-bg:#ecfdf5; --g-line:#a7f3d0;
+    --ink:#0f172a; --mut:#64748b; --line:#e2e8f0; --card:#fff; --bg:#f8fafc;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,"PingFang SC","Microsoft YaHei",Segoe UI,Roboto,sans-serif;
+       background:var(--bg);color:var(--ink);line-height:1.6;font-size:15px}
+  .wrap{max-width:1040px;margin:0 auto;padding:32px 20px 80px}
+  header{text-align:center;padding:28px 0 12px}
+  h1{font-size:30px;margin:0 0 6px;letter-spacing:.5px}
+  .sub{color:var(--mut);font-size:14px}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:16px 0 8px}
+  .chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:12.5px;color:var(--mut)}
+  section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin:20px 0;
+          box-shadow:0 1px 2px rgba(15,23,42,.04)}
+  h2{font-size:21px;margin:0 0 4px;display:flex;align-items:center;gap:10px}
+  h3{font-size:16px;margin:22px 0 8px;color:#334155}
+  .tag{font-size:12px;font-weight:700;padding:3px 10px;border-radius:7px;letter-spacing:.5px}
+  .tagA{background:var(--a-bg);color:var(--a);border:1px solid var(--a-line)}
+  .tagB{background:var(--b-bg);color:var(--b);border:1px solid var(--b-line)}
+  .tagG{background:var(--g-bg);color:var(--g);border:1px solid var(--g-line)}
+  .lead{color:var(--mut);margin:2px 0 14px;font-size:14px}
+  table{width:100%;border-collapse:collapse;margin:10px 0;font-size:14px}
+  th,td{padding:9px 10px;text-align:left;border-bottom:1px solid var(--line)}
+  th{background:#f1f5f9;font-weight:600;font-size:13px;color:#475569}
+  td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+  tr.sum td{font-weight:700;background:#f8fafc}
+  .note{font-size:12.5px;color:var(--mut);margin:6px 0}
+  .pill{display:inline-block;background:#f1f5f9;border-radius:6px;padding:1px 7px;font-size:12px;color:#475569}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:14px 0}
+  .kpi{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:#fff}
+  .kpi .v{font-size:24px;font-weight:800;letter-spacing:.5px}
+  .kpi .l{font-size:12.5px;color:var(--mut);margin-top:2px}
+  .kpi.A .v{color:var(--a)} .kpi.B .v{color:var(--b)} .kpi.G .v{color:var(--g)}
+  .bar{height:22px;border-radius:6px;display:flex;align-items:center;color:#fff;font-size:12px;
+       padding:0 8px;white-space:nowrap;min-width:36px}
+  .barrow{display:grid;grid-template-columns:140px 1fr 92px;align-items:center;gap:10px;margin:7px 0;font-size:13px}
+  .barrow .lab{color:#334155}
+  .barrow .val{text-align:right;color:var(--mut);font-variant-numeric:tabular-nums}
+  .callout{border-left:4px solid var(--g);background:var(--g-bg);padding:12px 16px;border-radius:8px;margin:14px 0;font-size:13.5px}
+  .warn{border-left:4px solid #dc2626;background:#fef2f2;padding:12px 16px;border-radius:8px;margin:14px 0;font-size:13.5px}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:720px){.split{grid-template-columns:1fr}.barrow{grid-template-columns:96px 1fr 76px}}
+  code{background:#f1f5f9;padding:1px 6px;border-radius:5px;font-size:13px}
+  footer{text-align:center;color:var(--mut);font-size:12.5px;margin-top:30px}
+  .blank{color:#dc2626;font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>LexHub 成本核算与定价方案</h1>
+  <div class="sub">成本分两部分核算 · Token 自下而上估算 · 按每百万 Token 计价</div>
+  <div class="meta">
+    <span class="chip">汇率 $1 = ¥7.2</span>
+    <span class="chip">五险一金：北京</span>
+    <span class="chip">合规：面向公众上线</span>
+    <span class="chip">数据时间 2026-06</span>
+  </div>
+</header>
+
+<!-- ============ 模型总览 KPI ============ -->
+<section>
+  <h2>一图速览</h2>
+  <div class="kpis">
+    <div class="kpi A"><div class="v">¥143k</div><div class="l">Part A 我们月度开发成本</div></div>
+    <div class="kpi A"><div class="v">¥210k</div><div class="l">一次性 · 8 卡 5090 工作站</div></div>
+    <div class="kpi B"><div class="v">客户承担</div><div class="l">Part B 部署 / 数据源</div></div>
+    <div class="kpi G"><div class="v">430M</div><div class="l">500 人所 · 月 Token 总量</div></div>
+    <div class="kpi G"><div class="v">¥36 / M</div><div class="l">对外计价（混合，高于最贵主流）</div></div>
+  </div>
+  <p class="note">成本严格拆成两块并标注归属：<span class="tag tagA">A 我们（开发方）承担</span> 仅人员薪酬 + vibecoding 开发账户 + 算力；
+  <span class="tag tagB">B 客户律所承担</span> 数据 / 云服务器 / 部署，全部放在第一个大客户律所公司内，不进我们 P&L。</p>
+</section>
+
+<!-- ============ PART A ============ -->
+<section>
+  <h2><span class="tag tagA">PART A</span> 我们（开发方）承担的成本</h2>
+  <p class="lead">只承担开发相关支出：人员薪酬、vibecoding 开发账户、算力。部署与数据不在此列。</p>
+
+  <h3>A1 · 人员薪酬（3 人 · 北京五险一金）</h3>
+  <table>
+    <thead><tr><th>角色</th><th class="n">人数</th><th class="n">月薪 (¥)</th><th class="n">小计 (¥)</th></tr></thead>
+    <tbody>
+      <tr><td>Agent 开发 · 全栈/后端</td><td class="n">2</td><td class="n">35,000</td><td class="n">70,000</td></tr>
+      <tr><td>Agent 开发 · 前端</td><td class="n">1</td><td class="n">28,000</td><td class="n">28,000</td></tr>
+      <tr class="sum"><td>税前合计</td><td class="n">3</td><td class="n">—</td><td class="n">98,000</td></tr>
+      <tr><td>+ 五险一金（雇主，北京 ≈32%）</td><td class="n"></td><td class="n"></td><td class="n">31,360</td></tr>
+      <tr class="sum"><td>人员成本合计</td><td class="n"></td><td class="n"></td><td class="n">≈ 129,360</td></tr>
+    </tbody>
+  </table>
+  <p class="note">北京雇主五险一金：养老 16% + 医疗 ≈9.8% + 失业 0.5% + 工伤 ≈0.3% + 公积金 12% ≈ <strong>38%</strong>；
+  但社保有缴费基数上限（2026 约 ¥35,283/月），高薪段触顶后实际负担率回落，故按 <strong>≈32%</strong> 估。基数可调。</p>
+
+  <h3>A2 · vibecoding 开发账户</h3>
+  <table>
+    <thead><tr><th>项目</th><th>说明</th><th class="n">月费 (¥)</th></tr></thead>
+    <tbody>
+      <tr><td>Claude Code (Max ×3)</td><td>主力 AI 编程，重度用量</td><td class="n">3,000–4,500</td></tr>
+      <tr><td>Cursor / 其他席位</td><td>补充 IDE / 模型</td><td class="n">1,000–2,000</td></tr>
+      <tr class="sum"><td>小计</td><td></td><td class="n">≈ 5,000</td></tr>
+    </tbody>
+  </table>
+
+  <h3>A3 · 算力</h3>
+  <table>
+    <thead><tr><th>项目</th><th>口径</th><th class="n">金额 (¥)</th></tr></thead>
+    <tbody>
+      <tr><td>首月 · 纯 API</td><td>= 下方 Token 模型的 API 成本（DeepSeek 主力）</td><td class="n">≈ 1,100 / 月</td></tr>
+      <tr><td>8 卡 5090 工作站（一次性）</td><td>RTX 5090 ×8 @¥18,000 ≈ ¥144,000 + 整机/机箱/电源/散热 ≈ ¥60,000</td><td class="n">≈ 210,000</td></tr>
+      <tr><td>A100 等高端卡</td><td>用就租，不常备。A100 80G 约 ¥10,000–20,000 / 卡 / 月</td><td class="n">按需 / 变动</td></tr>
+    </tbody>
+  </table>
+  <p class="note">首月口径：<strong>纯 API</strong>，本地 8 卡 5090（8×32G=256G 显存）用于后续自托管推理 / 微调 / 私有化验证；A100 等仅在跑大模型时临时租赁。</p>
+
+  <h3>A4 · 联合办公</h3>
+  <table>
+    <thead><tr><th>项目</th><th>口径</th><th class="n">月费 (¥)</th></tr></thead>
+    <tbody>
+      <tr><td>工位 ×3（北京联合办公）</td><td>¥2,000–3,000 / 工位</td><td class="n">≈ 7,500</td></tr>
+    </tbody>
+  </table>
+
+  <h3>A5 · 合规（面向公众上线 · 一次性）</h3>
+  <table>
+    <thead><tr><th>项目</th><th>说明</th><th class="n">金额 (¥)</th></tr></thead>
+    <tbody>
+      <tr><td>生成式 AI 算法备案</td><td>面向公众的大模型应用<strong>强制</strong>，卡上线时间</td><td class="n"><span class="blank">10,000–50,000</span></td></tr>
+      <tr><td>等保 / 数据安全</td><td>核心数据部署在客户律所侧，主体测评可随客户基础设施一并覆盖；我方先做差距评估</td><td class="n"><span class="blank">「____」</span></td></tr>
+    </tbody>
+  </table>
+
+  <h3>Part A 月度合计</h3>
+  <table>
+    <thead><tr><th>科目</th><th class="n">月度 (¥)</th></tr></thead>
+    <tbody>
+      <tr><td>人员（含五险一金）</td><td class="n">129,360</td></tr>
+      <tr><td>vibecoding 开发账户</td><td class="n">5,000</td></tr>
+      <tr><td>算力 · 首月纯 API</td><td class="n">1,100</td></tr>
+      <tr><td>联合办公（3 工位）</td><td class="n">7,500</td></tr>
+      <tr class="sum"><td>Part A 月度经常性合计</td><td class="n">≈ 142,960</td></tr>
+      <tr><td>一次性 · 8 卡 5090 工作站</td><td class="n">≈ 210,000</td></tr>
+      <tr><td>一次性 · 算法备案</td><td class="n"><span class="blank">10,000–50,000</span></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============ PART B ============ -->
+<section>
+  <h2><span class="tag tagB">PART B</span> 客户律所承担的部署 / 数据成本</h2>
+  <p class="lead">数据与云服务器全部部署在<strong>第一个大客户律所公司内</strong>，由客户承担，<strong>不计入我们 P&L</strong>。此处仅供你向客户说明其侧 TCO。</p>
+  <table>
+    <thead><tr><th>子项</th><th>配置假设</th><th class="n">参考费用 (¥)</th></tr></thead>
+    <tbody>
+      <tr><td>应用 / Agent 服务器</td><td>部署于律所内网或私有云</td><td class="n">客户侧</td></tr>
+      <tr><td>PostgreSQL + pgvector 向量库</td><td>合同 / 法规 / 案例检索</td><td class="n">客户侧</td></tr>
+      <tr><td>Redis 缓存</td><td>会话 / 限流</td><td class="n">客户侧</td></tr>
+      <tr><td>对象存储（合同文件）</td><td>OSS / 私有 MinIO</td><td class="n">客户侧</td></tr>
+      <tr><td>公网带宽 / CDN / 备份 / 监控</td><td>如需对外访问</td><td class="n">客户侧</td></tr>
+      <tr><td>法律数据源 · <strong>北大法宝</strong></td><td>依托客户搞定；企业 API / 数据授权（暂按北大法宝估）</td><td class="n"><span class="blank">¥50,000–200,000 / 年</span></td></tr>
+    </tbody>
+  </table>
+  <p class="note">⚠️ 北大法宝授权为按报价拍板项，金额随席位 / 数据范围浮动；面向公众上线时其转授权 / 公开使用条款需单独确认。</p>
+</section>
+
+<!-- ============ TOKEN 模型 ============ -->
+<section>
+  <h2><span class="tag tagG">TOKEN 模型</span> 500 人律所月度用量自下而上估算</h2>
+  <p class="lead">按产品全部功能 × 单次 Token × 月度调用频次，推算 Token 总量，再按每百万 Token 计价。</p>
+
+  <h3>测算假设</h3>
+  <div class="kpis">
+    <div class="kpi"><div class="v">500</div><div class="l">律所总人数</div></div>
+    <div class="kpi"><div class="v">300</div><div class="l">活跃用户（律师/助理 ≈60%）</div></div>
+    <div class="kpi"><div class="v">22</div><div class="l">工作日 / 月</div></div>
+  </div>
+
+  <h3>单次任务 Token（含 Agent 多步调用 + RAG 检索上下文）</h3>
+  <table>
+    <thead><tr><th>功能</th><th class="n">输入 (tok)</th><th class="n">输出 (tok)</th><th class="n">单次合计</th></tr></thead>
+    <tbody>
+      <tr><td>合同审查（中等合同，多步 Agent + RAG）</td><td class="n">45,000</td><td class="n">12,000</td><td class="n">57,000</td></tr>
+      <tr><td>合同 / 文书起草</td><td class="n">15,000</td><td class="n">8,000</td><td class="n">23,000</td></tr>
+      <tr><td>法律问答（RAG 单轮）</td><td class="n">12,000</td><td class="n">2,500</td><td class="n">14,500</td></tr>
+      <tr><td>案例检索与分析</td><td class="n">18,000</td><td class="n">4,000</td><td class="n">22,000</td></tr>
+      <tr><td>多轮对话 / 追问（每会话累计）</td><td class="n">20,000</td><td class="n">5,000</td><td class="n">25,000</td></tr>
+    </tbody>
+  </table>
+  <p class="note">语音输入走 ASR，不计 LLM Token，单独核算（首月 Web Speech 免费档）。</p>
+
+  <h3>月度用量与 Token 总量</h3>
+  <table>
+    <thead><tr><th>功能</th><th class="n">次/活跃用户/月</th><th class="n">月总次数</th><th class="n">单次 tok</th><th class="n">月 Token (M)</th></tr></thead>
+    <tbody>
+      <tr><td>合同审查</td><td class="n">8</td><td class="n">2,400</td><td class="n">57,000</td><td class="n">136.8</td></tr>
+      <tr><td>法律问答</td><td class="n">25</td><td class="n">7,500</td><td class="n">14,500</td><td class="n">108.8</td></tr>
+      <tr><td>多轮追问</td><td class="n">12</td><td class="n">3,600</td><td class="n">25,000</td><td class="n">90.0</td></tr>
+      <tr><td>案例检索分析</td><td class="n">8</td><td class="n">2,400</td><td class="n">22,000</td><td class="n">52.8</td></tr>
+      <tr><td>文书起草</td><td class="n">6</td><td class="n">1,800</td><td class="n">23,000</td><td class="n">41.4</td></tr>
+      <tr class="sum"><td>合计</td><td class="n"></td><td class="n">17,700</td><td class="n"></td><td class="n">≈ 429.8</td></tr>
+    </tbody>
+  </table>
+
+  <h3>各功能 Token 占比</h3>
+  <div class="barrow"><span class="lab">合同审查</span><div><div class="bar" style="width:100%;background:#059669">136.8M · 32%</div></div><span class="val"></span></div>
+  <div class="barrow"><span class="lab">法律问答</span><div><div class="bar" style="width:79.5%;background:#10b981">108.8M · 25%</div></div><span class="val"></span></div>
+  <div class="barrow"><span class="lab">多轮追问</span><div><div class="bar" style="width:65.8%;background:#34d399">90.0M · 21%</div></div><span class="val"></span></div>
+  <div class="barrow"><span class="lab">案例检索</span><div><div class="bar" style="width:38.6%;background:#6ee7b7;color:#065f46">52.8M · 12%</div></div><span class="val"></span></div>
+  <div class="barrow"><span class="lab">文书起草</span><div><div class="bar" style="width:30.3%;background:#a7f3d0;color:#065f46">41.4M · 10%</div></div><span class="val"></span></div>
+
+  <div class="kpis" style="margin-top:18px">
+    <div class="kpi G"><div class="v">429.8M</div><div class="l">月 Token 总量</div></div>
+    <div class="kpi"><div class="v">340.2M</div><div class="l">输入 Token（79%）</div></div>
+    <div class="kpi"><div class="v">89.6M</div><div class="l">输出 Token（21%）</div></div>
+  </div>
+</section>
+
+<!-- ============ 成本 vs 计价 ============ -->
+<section>
+  <h2>Token 成本 vs 计价</h2>
+
+  <h3>我们的 API 成本（DeepSeek 主力）</h3>
+  <table>
+    <thead><tr><th></th><th class="n">Token (M)</th><th class="n">单价 (¥/M)</th><th class="n">成本 (¥)</th></tr></thead>
+    <tbody>
+      <tr><td>输入</td><td class="n">340.2</td><td class="n">2.2</td><td class="n">748</td></tr>
+      <tr><td>输出</td><td class="n">89.6</td><td class="n">3.6</td><td class="n">323</td></tr>
+      <tr class="sum"><td>月 API 成本</td><td class="n"></td><td class="n"></td><td class="n">≈ 1,071</td></tr>
+    </tbody>
+  </table>
+  <p class="note">若部分高价值任务改用高端模型（混合 ≈¥10/M），月成本升至 ¥4,000–8,000。本地 8 卡 5090 可承接 Embedding / Rerank / 部分推理，进一步压低 API 成本。</p>
+
+  <h3>对外计价（高于最贵主流模型）</h3>
+  <p class="note">锚定你点名集合（DeepSeek / 千问 / 豆包 / ChatGPT / Gemini）中最贵的 <strong>GPT-4o（¥18 入 / ¥72 出）</strong>，整体上浮 <strong>25%</strong>。</p>
+  <table>
+    <thead><tr><th></th><th class="n">Token (M)</th><th class="n">计价 (¥/M)</th><th class="n">收入 (¥)</th></tr></thead>
+    <tbody>
+      <tr><td>输入</td><td class="n">340.2</td><td class="n">22</td><td class="n">7,484</td></tr>
+      <tr><td>输出</td><td class="n">89.6</td><td class="n">90</td><td class="n">8,060</td></tr>
+      <tr class="sum"><td>月 Token 收入</td><td class="n"></td><td class="n"></td><td class="n">≈ 15,544</td></tr>
+    </tbody>
+  </table>
+
+  <div class="kpis">
+    <div class="kpi"><div class="v">¥22 / ¥90</div><div class="l">输入 / 输出 计价 (¥/M)</div></div>
+    <div class="kpi G"><div class="v">¥36 / M</div><div class="l">混合有效单价（每百万 Token）</div></div>
+    <div class="kpi G"><div class="v">~93%</div><div class="l">Token 毛利率</div></div>
+  </div>
+</section>
+
+<!-- ============ 主流模型定价 ============ -->
+<section>
+  <h2>主流模型定价调研（每百万 Token · 2026-06）</h2>
+  <p class="note">折算 $1=¥7.2。计价锚点取你点名集合内最贵者；若把 Claude 纳入主流，天花板更高。</p>
+  <table>
+    <thead><tr><th>模型</th><th class="n">输入 (¥/M)</th><th class="n">输出 (¥/M)</th><th>原始报价</th></tr></thead>
+    <tbody>
+      <tr><td>DeepSeek V4（我方主力）</td><td class="n">2.2</td><td class="n">3.6</td><td>$0.30 / $0.50</td></tr>
+      <tr><td>通义 Qwen3.5-Plus</td><td class="n">0.8</td><td class="n">4.8</td><td>¥官方</td></tr>
+      <tr><td>豆包 Seed2.0-pro</td><td class="n">3.2</td><td class="n">16</td><td>¥官方</td></tr>
+      <tr><td>Gemini 2.5 Flash</td><td class="n">2.2</td><td class="n">18</td><td>$0.30 / $2.50</td></tr>
+      <tr><td><strong>GPT-4o（点名集合最贵 · 锚点）</strong></td><td class="n">18</td><td class="n">72</td><td>$2.50 / $10</td></tr>
+      <tr><td>Gemini 2.5 Pro</td><td class="n">9</td><td class="n">72</td><td>$1.25 / $10</td></tr>
+      <tr style="color:#94a3b8"><td>（参考）Claude Opus 4.8</td><td class="n">36</td><td class="n">180</td><td>$5 / $25</td></tr>
+      <tr class="sum"><td>LexHub 计价（GPT-4o ×1.25）</td><td class="n">22</td><td class="n">90</td><td>—</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============ 盈亏 reality check ============ -->
+<section>
+  <h2>汇总与盈亏对照</h2>
+  <table>
+    <thead><tr><th>项</th><th class="n">金额 (¥)</th></tr></thead>
+    <tbody>
+      <tr><td><span class="tag tagA">A</span> 我们月度经常性成本</td><td class="n">≈ 142,960</td></tr>
+      <tr><td><span class="tag tagA">A</span> 一次性（8 卡 5090 + 算法备案）</td><td class="n">≈ 220,000–260,000</td></tr>
+      <tr><td><span class="tag tagB">B</span> 客户律所部署 + 北大法宝</td><td class="n">客户承担（不进我方 P&L）</td></tr>
+      <tr><td>单个 500 人客户 · 月 Token 收入</td><td class="n">≈ 15,544</td></tr>
+    </tbody>
+  </table>
+
+  <div class="warn">
+    <strong>盈亏现实校验：</strong>纯按 Token 计价，单个 500 人律所月收入仅 <strong>≈¥15.5k</strong>，远不足以覆盖我们 <strong>≈¥143k/月</strong> 的开发成本。
+    覆盖月度成本需约 <strong>9 个</strong>同等体量律所并行付费。
+  </div>
+  <div class="callout">
+    <strong>建议：</strong>Token 作为底层计量与对外报价口径（“按 Token 计费、高于最贵主流模型”讲得通），
+    但实际售卖叠加<strong>席位制 / 私有化部署服务费 / 年度框架</strong>把客单价拉到合理区间——
+    法律产品的价值在专业工作流，不在 Token 单价。
+  </div>
+</section>
+
+<footer>
+  口径与单价均为可调参数 · 标 <span class="blank">红色</span> 处为需拍板 / 询价项 · 生成于 2026-06 · LexHub
+</footer>
+
+</div>
+</body>
+</html>
