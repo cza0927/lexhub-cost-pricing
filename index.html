@@ -200,14 +200,28 @@
     </div>
 
     <div class="win">
-      <h3><span class="ico iA">📋</span> A6 · 合规（一次性）</h3>
+      <h3><span class="ico iA">📋</span> A6 · 合规（一次性 · 按技术路线二选一）</h3>
+      <p class="note" style="margin-top:0">政府备案 / 公安定级<strong>本身不收费</strong>；下列金额是<strong>咨询代办 + 安全测试 + 整改</strong>的成本。金额随「纯 API / 自托管」路线分两档。</p>
       <table>
-        <thead><tr><th>项目</th><th>说明</th><th class="n">金额 (¥)</th></tr></thead>
+        <thead><tr><th>方案</th><th>适用</th><th class="n">算法 / 模型备案</th><th class="n">等保（我方主体）</th><th class="n">合计 (¥)</th></tr></thead>
         <tbody>
-          <tr><td>生成式 AI 算法备案</td><td>面向公众强制，卡上线时间</td><td class="n"><span class="blank">10,000–50,000</span></td></tr>
-          <tr><td>等保 / 数据安全（我方主体差距评估）</td><td>核心数据在客户侧，主体测评随客户基础设施覆盖</td><td class="n"><span class="blank">「____」</span></td></tr>
+          <tr>
+            <td><strong>① 轻量合规</strong><br><span style="color:var(--g)">推荐首月</span></td>
+            <td>纯调已备案的 DeepSeek API，应用层</td>
+            <td class="n">应用算法备案<br>自办~轻代办<br>0–30,000</td>
+            <td class="n">差距评估 + 咨询<br>纳入客户等保环境<br>10,000–30,000</td>
+            <td class="n"><strong>≈ 10,000–60,000</strong></td>
+          </tr>
+          <tr>
+            <td><strong>② 完整合规</strong><br><span style="color:var(--mut)">自托管后</span></td>
+            <td>8 卡 5090 自微调、独立面向公众</td>
+            <td class="n">大模型上线备案<br>+ 安全评估<br>30,000–150,000</td>
+            <td class="n">独立三级测评 + 整改<br>(测评 6–10万/年 + 整改一次性)<br>80,000–300,000</td>
+            <td class="n"><strong>≈ 110,000–450,000</strong></td>
+          </tr>
         </tbody>
       </table>
+      <p class="note">首月若主力只调 DeepSeek（其已自行备案），走方案①即可，负担轻；待自托管模型对公众开放再升级到方案②。最终以合规机构报价为准。</p>
     </div>
 
     <div class="win">
@@ -223,7 +237,7 @@
           <tr><td><span class="hl">预留 · 新功能 / 扩张缓冲</span></td><td class="n"><span class="hl">25,000</span></td></tr>
           <tr class="sum"><td>Part A 月度经常性合计</td><td class="n">≈ 257,840</td></tr>
           <tr><td>一次性 · 8 卡 5090 工作站</td><td class="n">≈ 240,000</td></tr>
-          <tr><td>一次性 · 算法备案</td><td class="n"><span class="blank">10,000–50,000</span></td></tr>
+          <tr><td>一次性 · 合规备案（方案①轻量，首月）</td><td class="n">≈ 10,000–60,000</td></tr>
         </tbody>
       </table>
       <p class="note">预留缓冲专为后续陆续上线的大量新功能（新模型、新数据源、新增人力）留出核算空间，可随路线图调整。</p>
@@ -264,22 +278,25 @@
     </div>
 
     <div class="win">
-      <h3><span class="ico iB">🔐</span> B3 · 合规与一次性</h3>
+      <h3><span class="ico iB">🔐</span> B3 · 合规与一次性（客户侧）</h3>
       <table>
         <thead><tr><th>子项</th><th>说明</th><th class="n">金额 (¥)</th></tr></thead>
         <tbody>
-          <tr><td>等保 2.0 三级测评</td><td>数据在客户主体侧，由客户基础设施承载</td><td class="n"><span class="blank">30,000–100,000（一次性）</span></td></tr>
+          <tr><td>三级等保测评（测评机构费）</td><td>法律数据高敏感，通常需三级；按年复测</td><td class="n">50,000–100,000 / 年</td></tr>
+          <tr><td>安全整改 / 设备</td><td>堡垒机 / 日志审计 / WAF / 加密等；大所多已具备，可抵扣</td><td class="n">100,000–300,000（一次性）</td></tr>
+          <tr><td>定级备案（公安机关）</td><td>官方手续</td><td class="n">免费</td></tr>
           <tr><td>本地 GPU 推理（可选）</td><td>客户如要私有大模型，另配 GPU</td><td class="n">按需</td></tr>
           <tr><td>客户侧运维人力</td><td>客户 IT 团队承接</td><td class="n">客户内部</td></tr>
         </tbody>
       </table>
+      <p class="note">数据在客户主体侧，等保由客户基础设施承载；大所通常已过等保、有现成安全设备，整改成本可大幅抵扣。</p>
     </div>
 
     <div class="win">
       <h3><span class="ico iB">Σ</span> Part B 合计（客户承担）</h3>
       <div class="kpis">
         <div class="kpi B"><div class="v">¥18–38k</div><div class="l">月度（基础设施 + 数据源月摊）</div></div>
-        <div class="kpi B"><div class="v">¥30–100k</div><div class="l">一次性（等保测评）</div></div>
+        <div class="kpi B"><div class="v">¥5–10万/年</div><div class="l">等保三级测评（整改可抵扣）</div></div>
       </div>
     </div>
   </section>
