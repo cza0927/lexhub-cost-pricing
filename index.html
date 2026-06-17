@@ -189,11 +189,12 @@
       <table>
         <thead><tr><th>项目</th><th>口径 / 用途</th><th class="n">金额 (¥)</th></tr></thead>
         <tbody>
-          <tr><td>8 卡 5090 工作站（一次性）</td><td>RTX 5090 ×8 @¥20,000≈¥160,000 + 整机/机箱/电源/散热 ≈¥80,000；自托管推理 / 微调</td><td class="n">≈ 240,000</td></tr>
-          <tr><td>A100 等高端卡租赁（月度预算）</td><td>常租 1–2 卡微调 / 私有化验证（A100 80G ≈ ¥10,000–20,000/卡/月）</td><td class="n">≈ 20,000 / 月</td></tr>
+          <tr><td>8 卡 5090 工作站（一次性）</td><td>RTX 5090 ×8（32G/卡，合计 256G 显存）@¥30,000≈¥240,000 + 整机/主板/机箱/电源/散热/高速盘 ≈¥80,000；承接 7B–32B LoRA、Embedding / Rerank、自托管推理、离线评测</td><td class="n">≈ 320,000</td></tr>
+          <tr><td>H800 租赁（月度预算）</td><td>按 ¥6,000/卡/月测算；建议先租 2–4 卡，用于 32B–70B LoRA、长上下文实验、客户私有化验证</td><td class="n">≈ 12,000–24,000 / 月</td></tr>
+          <tr><td>法律 Agent 微调实验包</td><td>本地机器运行摊销、训练数据清洗/脱敏、LoRA 训练、自动评测、人工抽检、失败重训；不含 H800 租赁</td><td class="n">≈ 8,000–17,000 / 月</td></tr>
         </tbody>
       </table>
-      <p class="note">首月生产纯 API；本地 8 卡 5090（256G 显存）承接 Embedding / Rerank / 自托管推理，逐步替代部分 API 降本。</p>
+      <p class="note">首月生产纯 API；本地 8 卡 5090（256G 显存）先承接 Embedding / Rerank / 中小模型推理与 7B–32B LoRA。需要更大模型或客户私有化验证时，再按月租 H800。</p>
     </div>
 
     <div class="win">
@@ -310,12 +311,12 @@
           <tr><td>A2 vibecoding 开发账户（8 席）</td><td class="n">18,000</td></tr>
           <tr><td>A4 变动 / 调用成本（单 500 人所）</td><td class="n">27,000</td></tr>
           <tr><td>A5 办公 · 设备 · 自有环境（月度）</td><td class="n">26,000</td></tr>
-          <tr><td>A3 算力 · A100 月度租赁预算</td><td class="n">20,000</td></tr>
+          <tr><td>A3 算力 · H800 + 微调实验</td><td class="n">35,000</td></tr>
           <tr><td>A8 保险（职业责任险 + 数据泄露险）</td><td class="n">6,000</td></tr>
           <tr><td>A7 财务 / 行政（记账 / 审计 / 工商）</td><td class="n">4,000</td></tr>
           <tr><td><span class="hl">预留 · 新功能 / 扩张缓冲</span></td><td class="n"><span class="hl">25,000</span></td></tr>
-          <tr class="sum"><td>Part A 月度经常性合计</td><td class="n">≈ 298,840</td></tr>
-          <tr><td>一次性 · 8 卡 5090 工作站</td><td class="n">≈ 240,000</td></tr>
+          <tr class="sum"><td>Part A 月度经常性合计</td><td class="n">≈ 313,840</td></tr>
+          <tr><td>一次性 · 8 卡 5090 工作站</td><td class="n">≈ 320,000</td></tr>
           <tr><td>一次性 · 团队设备（笔记本 / 显示器 / 外设）</td><td class="n">≈ 116,000</td></tr>
           <tr><td>一次性 · 公司注册 / 软著 / 商标</td><td class="n">≈ 15,000</td></tr>
           <tr><td>一次性 · 合规备案（方案①轻量，首月）</td><td class="n">≈ 10,000–60,000</td></tr>
@@ -684,46 +685,75 @@
 
   <!-- ====== 附录三 · 算力 ====== -->
   <section class="panel" id="apxCompute">
-    <h1><span class="tag tagA">附录三</span> 算力（框架 · 待填）</h1>
-    <p class="ph">自托管 / GPU 算力的核算界面。结构已搭好，具体数字待选型与询价后填入（🔲 = 待填）。核心问题：何时该把 API 调用迁到自有算力、回本周期多久。</p>
+    <h1><span class="tag tagA">附录三</span> 法律 Agent 算力与微调成本</h1>
+    <p class="ph">面向法律 Agent 的微调、评测与私有化验证预算。核心口径：本地 5090 承接日常实验，H800 按月短租承接大模型 LoRA 与客户验证。</p>
 
     <div class="win">
       <h3><span class="ico iA">🖥️</span> 自有算力资产</h3>
       <table>
         <thead><tr><th>项目</th><th>规格</th><th class="n">一次性 / 月</th><th>备注</th></tr></thead>
         <tbody>
-          <tr><td>8 卡 5090 工作站</td><td>RTX 5090 ×8（256G 显存）</td><td class="n">≈ ¥240,000（一次性）</td><td>已在 Part A · A3</td></tr>
-          <tr><td>折旧摊销</td><td>按 3 年直线</td><td class="n">🔲 ≈ ¥6,700 / 月</td><td>待定折旧年限</td></tr>
-          <tr><td>电费 / 托管</td><td>8 卡满载功耗</td><td class="n">🔲 待填</td><td>联合办公供电是否够，需确认</td></tr>
-          <tr><td>A100 等租赁</td><td>按需 1–2 卡</td><td class="n">≈ ¥10,000–20,000/卡/月</td><td>用时计，已在 A3 预算</td></tr>
+          <tr><td>8 卡 5090 工作站</td><td>RTX 5090 ×8，约 256G 总显存；高速 NVMe 8–16T</td><td class="n">≈ ¥320,000（一次性）</td><td>已在 Part A · A3；适合 7B–32B LoRA / DPO、小批量推理、Embedding、Rerank</td></tr>
+          <tr><td>本地机器运行摊销</td><td>折旧、电费、空调、维护</td><td class="n">并入微调实验包</td><td>不在资产表单独列月费，避免和实验预算重复</td></tr>
+          <tr><td>H800 租赁</td><td>80G 显存；2–4 卡起租更适合 32B–70B LoRA</td><td class="n">≈ ¥6,000/卡/月</td><td>当前主推租赁口径；价格比 A100/H100 更适合早期实验预算</td></tr>
         </tbody>
       </table>
     </div>
 
     <div class="win">
-      <h3><span class="ico iA">⚖️</span> 自建 vs API 经济性（回本测算 · 待填）</h3>
+      <h3><span class="ico iA">🧠</span> H800 / A100 / H100 怎么选</h3>
+      <table>
+        <thead><tr><th>卡型</th><th>优势</th><th>劣势</th><th class="n">建议用途</th><th class="n">预算口径</th></tr></thead>
+        <tbody>
+          <tr><td>RTX 5090</td><td>一次买断，日常推理和中小模型 LoRA 便宜</td><td>单卡 32G，训练 70B 受限；多卡稳定性弱于数据中心卡</td><td class="n">7B–32B 日常实验</td><td class="n">≈ ¥320,000 一次性</td></tr>
+          <tr><td>H800</td><td>80G 显存，适合大模型 LoRA；你拿到的包月价低</td><td>比 H100 慢；供应与网络环境要看租赁方</td><td class="n">32B–70B 主力租赁</td><td class="n">≈ ¥6,000/卡/月</td></tr>
+          <tr><td>A100 80G</td><td>生态成熟，训练稳定，资料多</td><td>价格通常高于 H800 当前报价；速度弱于 H100</td><td class="n">H800 不稳定时备选</td><td class="n">询价后备用</td></tr>
+          <tr><td>H100</td><td>速度最快，适合高吞吐训练和紧急交付</td><td>租金通常最高，早期长期租不划算</td><td class="n">短期冲刺 / 交付压缩</td><td class="n">按需短租</td></tr>
+        </tbody>
+      </table>
+      <p class="note">结论：现阶段优先买 8 卡 5090 做日常实验，再租 2–4 张 H800 做大模型 LoRA。A100 作为稳定备选，H100 只在交付时间比钱更重要时短租。</p>
+    </div>
+
+    <div class="win">
+      <h3><span class="ico iA">🔧</span> 微调实验需要几张卡</h3>
+      <table>
+        <thead><tr><th>实验类型</th><th>建议配置</th><th class="n">能解决什么</th><th class="n">月度预算</th></tr></thead>
+        <tbody>
+          <tr><td>7B–14B LoRA</td><td>本地 1–2 张 5090</td><td class="n">合同分类、检索改写、工具调用格式、低风险子任务</td><td class="n">含在本地固定成本</td></tr>
+          <tr><td>32B LoRA / DPO</td><td>本地 4–8 张 5090；或 1–2 张 H800</td><td class="n">法律问答风格、检索后综合、Agent 输出格式稳定</td><td class="n">H800 ≈ ¥6,000–12,000</td></tr>
+          <tr><td>70B LoRA</td><td>建议 4 张 H800 起；预算紧可 2 张做小批量验证</td><td class="n">主模型能力验证、私有化旗舰版本、复杂多轮推理</td><td class="n">H800 ≈ ¥24,000</td></tr>
+          <tr><td>全参微调 / 继续预训练</td><td>8 张 H800/H100 起</td><td class="n">重塑底座能力，早期不建议做</td><td class="n">H800 ≈ ¥48,000+ / 月</td></tr>
+        </tbody>
+      </table>
+      <p class="note">早期推荐配置：8 卡 5090 自有 + 2 张 H800 包月。需要做 70B LoRA 或客户演示时，临时升到 4 张 H800；全参训练先不纳入常规预算。</p>
+    </div>
+
+    <div class="win">
+      <h3><span class="ico iA">📦</span> 法律 Agent 微调实验包说明</h3>
+      <table>
+        <thead><tr><th>成本点</th><th>为什么需要</th><th class="n">月预算</th></tr></thead>
+        <tbody>
+          <tr><td>本地机器运行摊销</td><td>折旧、电费、空调、维护按实验使用量分摊；现金流上 5090 仍按一次性采购</td><td class="n">¥2,000–4,000</td></tr>
+          <tr><td>训练数据处理</td><td>法律文本脱敏、去重、切分、问答/工具调用样本构造；否则模型只会“背材料”，不能稳定执行 Agent 流程</td><td class="n">¥3,000–6,000</td></tr>
+          <tr><td>评测与回归</td><td>固定黄金集、自动跑分、失败样本归因；每轮训练后判断是否真的比上一版好</td><td class="n">¥2,000–4,000</td></tr>
+          <tr><td>人工抽检</td><td>抽查法律结论、引用依据、风险提示，防止模型在关键法律问题上“看起来对但实际错”</td><td class="n">¥1,000–3,000</td></tr>
+          <tr class="sum"><td>月度合计</td><td>支撑每月 2–4 个可比较版本，不含 H800 租赁、研发人力和正式法律专家大规模标注</td><td class="n">≈ ¥8,000–17,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="win">
+      <h3><span class="ico iA">⚖️</span> 自建 vs API 经济性</h3>
       <table>
         <thead><tr><th>口径</th><th class="n">数值</th><th>说明</th></tr></thead>
         <tbody>
-          <tr><td>自托管可承接的调用类型</td><td class="n">🔲</td><td>Embedding / Rerank / 中小模型推理 / 微调</td></tr>
-          <tr><td>可替代的月 API 成本</td><td class="n">🔲</td><td>替代后每月省多少（对比 A4 LLM ¥8,000）</td></tr>
-          <tr><td>8 卡 5090 等效算力</td><td class="n">🔲</td><td>能跑多大参数模型 / 并发吞吐</td></tr>
-          <tr><td>回本周期</td><td class="n">🔲</td><td>= 设备一次性 ÷ 月节省</td></tr>
+          <tr><td>自托管优先承接</td><td class="n">Embedding / Rerank / 7B–32B 推理</td><td>高频、低风险、格式稳定任务最适合迁到自有算力</td></tr>
+          <tr><td>继续使用 API</td><td class="n">复杂推理 / 高风险法律结论</td><td>以准确率和责任边界优先，API 成本计入 A4 Token 模型</td></tr>
+          <tr><td>8 卡 5090 运行摊销</td><td class="n">并入微调实验包</td><td>设备现金流按一次性采购；月度只在具体训练实验中分摊运行成本</td></tr>
+          <tr><td>合理回本逻辑</td><td class="n">训练能力 + 私有化溢价</td><td>通过客户私有部署、离线评测、数据安全与模型资产沉淀回收，不只看 Token 差价</td></tr>
         </tbody>
       </table>
-    </div>
-
-    <div class="win">
-      <h3><span class="ico iA">🔧</span> 微调 / 私有化算力（待填）</h3>
-      <table>
-        <thead><tr><th>项目</th><th class="n">估算</th><th>说明</th></tr></thead>
-        <tbody>
-          <tr><td>法律领域微调（LoRA / 全参）</td><td class="n">🔲</td><td>训练卡时 × 单价；数据准备见 Part B 法律专家</td></tr>
-          <tr><td>私有化部署模型推理</td><td class="n">🔲</td><td>客户要求私有大模型时的 GPU 配置</td></tr>
-          <tr><td>评测 / 实验算力</td><td class="n">🔲</td><td>模型横评、回归测试</td></tr>
-        </tbody>
-      </table>
-      <p class="note">本附录为框架占位，等 GPU 选型、电费、微调方案与询价落实后填入具体数字；当前算力现金成本已在 Part A · A3 体现（8 卡 5090 一次性 + A100 月租预算）。</p>
+      <p class="note">建议早期节奏：第 1–2 月纯 API + 数据闭环；第 3 月开始 7B/14B LoRA；跑通评测后升级 32B；70B 只在客户私有化或明确性能瓶颈出现时启动。价格随 GPU 供给波动，正式预算前需重新询价。</p>
     </div>
   </section>
 
