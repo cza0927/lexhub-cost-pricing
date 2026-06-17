@@ -109,8 +109,8 @@
     <p class="ph">成本拆两部分；收费方案单独成章，按「API 使用」与「系统其他功能」两层分别设利润点。成本端按非保守口径估算并留扩张缓冲。</p>
     <div class="win">
       <div class="kpis">
-        <div class="kpi A"><div class="v">¥299k</div><div class="l">Part A 我们月度全成本</div></div>
-        <div class="kpi A"><div class="v">¥240k</div><div class="l">一次性 · 8 卡 5090 工作站</div></div>
+        <div class="kpi A"><div class="v">¥314k</div><div class="l">Part A 我们月度全成本</div></div>
+        <div class="kpi A"><div class="v">¥320k</div><div class="l">一次性 · 8 卡 5090 工作站</div></div>
         <div class="kpi B"><div class="v">¥9–24k</div><div class="l">Part B 客户律所月度（客户承担）</div></div>
         <div class="kpi G"><div class="v">430M</div><div class="l">500 人所 · 月 Token 总量</div></div>
         <div class="kpi P"><div class="v">¥68k</div><div class="l">单所月毛利（Token+增值）</div></div>
@@ -126,7 +126,7 @@
         </tbody>
       </table>
     </div>
-    <div class="warn"><strong>盈亏：</strong>单个 500 人律所月毛利 ≈¥68k，覆盖我们 ≈¥299k/月 全成本（已含保险、税费、自有环境等全部成本点；法律专家/获客/部署已移至客户侧）需约 <strong>4 个</strong>同等体量律所。该成本含未来新功能缓冲，近期实际更低；叠加私有化部署实施费 / 年度服务费，首单即可大幅回血。营收另需预留增值税约 6%。</div>
+    <div class="warn"><strong>盈亏：</strong>单个 500 人律所月毛利 ≈¥68k，覆盖我们 ≈¥314k/月 全成本（已含算力微调、保险、税费、自有环境等全部成本点；法律专家/获客/部署已移至客户侧）需约 <strong>4–5 个</strong>同等体量律所。该成本含未来新功能缓冲，近期实际更低；叠加私有化部署实施费 / 年度服务费，首单即可大幅回血。营收另需预留增值税约 6%。</div>
   </section>
 
   <!-- ====== 成本 A ====== -->
@@ -175,13 +175,14 @@
       <table>
         <thead><tr><th>项目</th><th>说明 / 用途</th><th class="n">月费 (¥)</th></tr></thead>
         <tbody>
-          <tr><td>Claude Code（Max ×8）</td><td>主力 AI 编程，全员顶配</td><td class="n">11,000–13,000</td></tr>
-          <tr><td>Cursor / 其他 IDE（×8）</td><td>补充 IDE / 模型</td><td class="n">1,600</td></tr>
-          <tr><td>多模型联调 API key</td><td>Agent 调试 / 多模型评测横评</td><td class="n">3,000–5,000</td></tr>
-          <tr><td>协作 / 设计 SaaS</td><td>团队订阅（项目管理 / 设计）</td><td class="n">≈ 1,000</td></tr>
+          <tr><td>Claude Code（Max ×8）</td><td>AI 编程助手：工程师用它让 AI 直接帮写、改、查代码，开发提速数倍。Max = 最高用量档，8 名成员各一个账号</td><td class="n">11,000–13,000</td></tr>
+          <tr><td>Cursor / 其他 IDE（×8）</td><td>另一款 AI 编程软件（IDE = 写代码的工作台），作为 Claude Code 的补充与备选</td><td class="n">1,600</td></tr>
+          <tr><td>多模型联调 API key</td><td>开发时调用各家大模型（DeepSeek / GPT / Claude 等）接口产生的费用，用来调试 Agent、横向比对哪个模型效果好</td><td class="n">3,000–5,000</td></tr>
+          <tr><td>协作 / 设计 SaaS</td><td>团队在线软件订阅：项目管理、文档协作、原型设计等</td><td class="n">≈ 1,000</td></tr>
           <tr class="sum"><td>小计</td><td></td><td class="n">≈ 18,000</td></tr>
         </tbody>
       </table>
+      <p class="note">vibecoding = 用 AI 辅助编程的工作方式；本项即团队为此付的各类 AI 工具与模型接口订阅费，是开发效率的直接投入。</p>
     </div>
 
     <div class="win">
@@ -194,7 +195,8 @@
           <tr><td>法律 Agent 微调实验包</td><td>本地机器运行摊销、训练数据清洗/脱敏、LoRA 训练、自动评测、人工抽检、失败重训；不含 H800 租赁</td><td class="n">≈ 8,000–17,000 / 月</td></tr>
         </tbody>
       </table>
-      <p class="note">首月生产纯 API；本地 8 卡 5090（256G 显存）先承接 Embedding / Rerank / 中小模型推理与 7B–32B LoRA。需要更大模型或客户私有化验证时，再按月租 H800。</p>
+      <p class="note">首月生产纯 API；本地 8 卡 5090（256G 显存）先承接 Embedding / Rerank / 中小模型推理与 7B–32B LoRA。需要更大模型或客户私有化验证时，再按月租 H800。详见<strong>附录三</strong>。<br>
+      名词：<strong>显卡/GPU</strong>=跑 AI 模型的核心硬件；<strong>LoRA</strong>=低成本微调（只训练少量参数，便宜快）；<strong>Embedding</strong>=把文字转成数字向量供 AI 检索；<strong>Rerank</strong>=对检索结果再排序提准；<strong>私有化</strong>=把模型部署在客户自己机房、数据不外流；<strong>7B–70B</strong>=模型参数规模（越大越强也越费卡）。</p>
     </div>
 
     <div class="win">
@@ -202,16 +204,16 @@
       <table>
         <thead><tr><th>子项</th><th>口径 / 用途</th><th class="n">月量</th><th class="n">单价</th><th class="n">月成本 (¥)</th></tr></thead>
         <tbody>
-          <tr><td>LLM API</td><td>主力 DeepSeek + 部分高端模型 + 未来 Agent 功能</td><td class="n">430M tok</td><td class="n">混合</td><td class="n">8,000</td></tr>
-          <tr><td>外部数据 API 取数</td><td>北大法宝检索 / 法规更新 / 工商 / 裁判文书</td><td class="n">≈40,000 次</td><td class="n">¥0.3/次</td><td class="n">12,000</td></tr>
-          <tr><td>语音识别 ASR</td><td>云 ASR 现成工具</td><td class="n">≈1,600 小时</td><td class="n">¥2.5/小时</td><td class="n">4,000</td></tr>
-          <tr><td>OCR（扫描合同）</td><td>合同审查约 30% 为扫描件</td><td class="n">≈20,000 页</td><td class="n">¥0.08/页</td><td class="n">1,600</td></tr>
-          <tr><td>Embedding / Rerank</td><td>RAG 向量化与重排</td><td class="n">—</td><td class="n">—</td><td class="n">800</td></tr>
-          <tr><td>短信验证</td><td>登录 / 二次验证</td><td class="n">—</td><td class="n">¥0.04/条</td><td class="n">600</td></tr>
+          <tr><td>LLM API</td><td>调用大语言模型的接口费（DeepSeek 为主，少量用更贵的高端模型）。Token = 按字数计费的单位，约等于汉字数</td><td class="n">430M tok</td><td class="n">混合</td><td class="n">8,000</td></tr>
+          <tr><td>外部数据 API 取数</td><td>向外部数据库取数据的按次费用：北大法宝查法条/案例、法规更新、工商信息、裁判文书</td><td class="n">≈40,000 次</td><td class="n">¥0.3/次</td><td class="n">12,000</td></tr>
+          <tr><td>语音识别 ASR</td><td>把用户说的话转成文字（ASR = 语音识别），用现成云服务，按音频时长计费</td><td class="n">≈1,600 小时</td><td class="n">¥2.5/小时</td><td class="n">4,000</td></tr>
+          <tr><td>OCR（扫描合同）</td><td>把扫描件 / 图片里的字识别出来（OCR = 文字识别）；约 30% 合同是扫描件，需要它才能读</td><td class="n">≈20,000 页</td><td class="n">¥0.08/页</td><td class="n">1,600</td></tr>
+          <tr><td>Embedding / Rerank</td><td>把法条 / 案例转成向量并重排检索结果，支撑 AI 精准找资料（RAG = 让 AI 带着检索到的资料回答）</td><td class="n">—</td><td class="n">—</td><td class="n">800</td></tr>
+          <tr><td>短信验证</td><td>用户登录 / 二次验证时发的短信验证码，按条计费</td><td class="n">—</td><td class="n">¥0.04/条</td><td class="n">600</td></tr>
           <tr class="sum"><td>变动调用合计</td><td></td><td class="n"></td><td class="n"></td><td class="n">≈ 27,000</td></tr>
         </tbody>
       </table>
-      <p class="note">这些调用成本同时是「收费方案 → 增值功能」的成本基数，对外按各自 ×2 计价。</p>
+      <p class="note">「变动成本」= 用户用得越多花得越多。这些同时是「收费方案 → 增值功能」的成本基数，对外按各自 ×2 计价。</p>
     </div>
 
     <div class="win">
@@ -221,9 +223,9 @@
         <tbody>
           <tr><td colspan="2" style="background:#f8fafc;font-weight:600">月度</td><td class="n" style="background:#f8fafc"></td></tr>
           <tr><td>联合办公工位 ×8</td><td>含网络 / 水电 / 会议室 / 前台（¥2,500/工位）</td><td class="n">20,000 / 月</td></tr>
-          <tr><td>自有开发 / 测试 / 演示云环境</td><td>生产在客户侧，我方另需 dev / staging / demo 服务器</td><td class="n">≈ 4,000 / 月</td></tr>
-          <tr><td>CI/CD · 代码托管 · 镜像仓库</td><td>GitHub / 构建流水线 / 制品库</td><td class="n">≈ 1,000 / 月</td></tr>
-          <tr><td>监控 / 错误追踪 / 域名 / SSL</td><td>开发期可观测性</td><td class="n">≈ 1,000 / 月</td></tr>
+          <tr><td>自有开发 / 测试 / 演示云环境</td><td>我们自己用的一套服务器：正式系统跑在客户机房，但日常开发、内部测试、给客户演示都得另有一套</td><td class="n">≈ 4,000 / 月</td></tr>
+          <tr><td>CI/CD · 代码托管 · 镜像仓库</td><td>存代码 + 自动化发布的工具（CI/CD = 代码改完自动测试、打包、上线，减少人工出错）</td><td class="n">≈ 1,000 / 月</td></tr>
+          <tr><td>监控 / 错误追踪 / 域名 / SSL</td><td>盯系统是否正常运行、自动捕捉报错，加上网址(域名)与 HTTPS 加密证书</td><td class="n">≈ 1,000 / 月</td></tr>
           <tr class="sum"><td>月度小计</td><td></td><td class="n">≈ 26,000 / 月</td></tr>
           <tr><td colspan="2" style="background:#f8fafc;font-weight:600">一次性 · 团队设备（8 人）</td><td class="n" style="background:#f8fafc"></td></tr>
           <tr><td>开发笔记本 / 工作站 ×8</td><td>¥12,000/人</td><td class="n">96,000</td></tr>
@@ -269,7 +271,7 @@
           <tr><td>年度审计（摊月）</td><td>年度财务审计，融资 / 合规需要，按年摊</td><td class="n">2,000 / 月</td></tr>
           <tr><td>工商年检 / 印章 / 对公账户 / 电子发票</td><td>行政刚性杂费</td><td class="n">500 / 月</td></tr>
           <tr class="sum"><td>月度小计</td><td></td><td class="n">≈ 4,000 / 月</td></tr>
-          <tr><td>公司注册 / 软著登记 / 商标注册</td><td>一次性，主体设立与 IP 保护</td><td class="n">≈ 15,000（一次性）</td></tr>
+          <tr><td>公司注册 / 软著登记 / 商标注册</td><td>一次性：注册公司主体 + 给软件登记版权（软著 = 软件著作权）+ 注册商标，保护品牌与知识产权</td><td class="n">≈ 15,000（一次性）</td></tr>
         </tbody>
       </table>
       <p class="note">不请外部法律顾问：我们是法律 AI 团队，用户协议 / 隐私政策 / 商务合同由自有法律能力处理（产品端法律校验在 Part B 由客户律师承担）。</p>
@@ -280,8 +282,8 @@
       <table>
         <thead><tr><th>险种</th><th>保什么</th><th class="n">费用 (¥)</th></tr></thead>
         <tbody>
-          <tr><td>职业责任险 / E&amp;O</td><td>AI 输出错误致客户损失的赔偿责任</td><td class="n">20,000–80,000 / 年</td></tr>
-          <tr><td>网络安全 / 数据泄露险</td><td>法律敏感数据泄露、网络事故</td><td class="n">10,000–30,000 / 年</td></tr>
+          <tr><td>职业责任险 / E&amp;O</td><td>E&amp;O = 错误与疏漏险：万一 AI 给出错误法律建议、客户因此受损来索赔，由保险赔付，保住公司</td><td class="n">20,000–80,000 / 年</td></tr>
+          <tr><td>网络安全 / 数据泄露险</td><td>万一法律敏感数据泄露、系统被攻击，赔偿与处置费用由保险覆盖</td><td class="n">10,000–30,000 / 年</td></tr>
           <tr class="sum"><td>月度小计（摊月）</td><td></td><td class="n">≈ 6,000 / 月</td></tr>
         </tbody>
       </table>
@@ -338,15 +340,15 @@
       <table>
         <thead><tr><th>类别</th><th>买/租什么</th><th>用处</th><th class="n">月费</th><th class="n">年费</th></tr></thead>
         <tbody>
-          <tr><td>云服务器</td><td>ECS 4核8G ×1</td><td>跑 Web、后台服务、聊天与后台任务</td><td class="n">400</td><td class="n">4,800</td></tr>
-          <tr><td>数据库</td><td>RDS PostgreSQL 高可用 2核4G/100GB</td><td>用户 / 案件 / 消息 / 邮件索引 / 审查结果</td><td class="n">600</td><td class="n">7,200</td></tr>
-          <tr><td>文件存储</td><td>OSS 1TB 起</td><td>合同、附件、导出文件</td><td class="n">150</td><td class="n">1,800</td></tr>
-          <tr><td>公网访问</td><td>EIP / 公网带宽 / 少量流量</td><td>域名访问、中等文件下载</td><td class="n">300</td><td class="n">3,600</td></tr>
-          <tr><td>基础防护</td><td>WAF 按量</td><td>挡常见 Web 攻击 / 扫描 / 注入</td><td class="n">100</td><td class="n">1,200</td></tr>
-          <tr><td>日志监控</td><td>SLS 少量日志 + 云监控</td><td>排障、错误、后台任务记录</td><td class="n">100</td><td class="n">1,200</td></tr>
-          <tr><td>备份</td><td>RDS 备份 + ECS 快照 + OSS 生命周期</td><td>误删 / 故障 / 配置错误可恢复</td><td class="n">200</td><td class="n">2,400</td></tr>
-          <tr><td>主机安全</td><td>云安全中心基础防护</td><td>服务器风险 / 病毒 / 漏洞检查</td><td class="n">50</td><td class="n">600</td></tr>
-          <tr><td>域名证书</td><td>域名 / DNS + 免费 HTTPS</td><td>正式域名访问 + 加密</td><td class="n">20</td><td class="n">240</td></tr>
+          <tr><td>云服务器</td><td>ECS 云服务器 4核8G ×1（租阿里云的虚拟主机）</td><td>跑 Web、后台服务、聊天与后台任务</td><td class="n">400</td><td class="n">4,800</td></tr>
+          <tr><td>数据库</td><td>RDS 托管数据库 2核4G/100GB 高可用（阿里云代运维 PostgreSQL，省去自己维护）</td><td>存用户 / 案件 / 消息 / 邮件索引 / 审查结果</td><td class="n">600</td><td class="n">7,200</td></tr>
+          <tr><td>文件存储</td><td>OSS 对象存储 1TB 起（云端存文件的空间）</td><td>放合同、附件、导出文件</td><td class="n">150</td><td class="n">1,800</td></tr>
+          <tr><td>公网访问</td><td>EIP 公网 IP + 带宽（系统对外的网络出口）</td><td>员工用网址访问、中等文件下载</td><td class="n">300</td><td class="n">3,600</td></tr>
+          <tr><td>基础防护</td><td>WAF 应用防火墙（按量，挡黑客）</td><td>挡常见 Web 攻击 / 扫描 / 注入</td><td class="n">100</td><td class="n">1,200</td></tr>
+          <tr><td>日志监控</td><td>SLS 日志服务 + 云监控（少量）</td><td>记录运行/出错，方便排查问题</td><td class="n">100</td><td class="n">1,200</td></tr>
+          <tr><td>备份</td><td>数据库备份 + 服务器快照 + 文件归档（快照 = 某时刻的完整副本）</td><td>误删 / 故障 / 配置错误时可恢复</td><td class="n">200</td><td class="n">2,400</td></tr>
+          <tr><td>主机安全</td><td>云安全中心基础防护</td><td>查服务器风险 / 病毒 / 漏洞</td><td class="n">50</td><td class="n">600</td></tr>
+          <tr><td>域名证书</td><td>域名 / DNS + 免费 HTTPS 证书</td><td>用正式网址访问 + 加密传输</td><td class="n">20</td><td class="n">240</td></tr>
           <tr class="sum"><td>基础估算</td><td></td><td></td><td class="n">1,920</td><td class="n">23,040</td></tr>
           <tr class="sum"><td>建议审批（含余量）</td><td>拿这个数做预算申请</td><td></td><td class="n">2,500</td><td class="n">30,000</td></tr>
         </tbody>
@@ -384,8 +386,8 @@
       <table>
         <thead><tr><th>项目</th><th>说明 / 用途</th><th class="n">口径</th></tr></thead>
         <tbody>
-          <tr><td>资深律师 / 法律专家校验</td><td>审核 prompt、构建知识库、校验 AI 输出合规性</td><td class="n">客户 500 名律师内部消化</td></tr>
-          <tr><td>法律数据标注 / 评测集</td><td>RAG 语料标注、安全测试题库</td><td class="n">客户业务团队配合</td></tr>
+          <tr><td>资深律师 / 法律专家校验</td><td>审核 AI 的提示词(prompt)、搭建法律知识库、检查 AI 输出是否准确合规</td><td class="n">客户 500 名律师内部消化</td></tr>
+          <tr><td>法律数据标注 / 评测集</td><td>整理供 AI 检索的法律语料、准备安全测试题库（RAG = 让 AI 带着检索到的资料作答，更准更可溯源）</td><td class="n">客户业务团队配合</td></tr>
         </tbody>
       </table>
       <p class="note">法律 AI 命脉，但客户本身是 500 人律所，自有律师即最佳领域专家，由客户内部消化，不增加我方现金成本。</p>
@@ -542,7 +544,7 @@
         </tbody>
       </table>
       <div class="callout">另可独立收取：<strong>私有化部署实施费</strong>（一次性）、<strong>年度服务 / 维保费</strong>、<strong>席位制订阅</strong>。Token 与增值功能作为底层计量与利润来源，部署 / 服务费作为大额一次性与续费现金流。</div>
-      <div class="warn"><strong>盈亏：</strong>单所月毛利 ≈¥68k，覆盖 Part A ≈¥299k/月 全成本需约 <strong>4 个</strong> 500 人所；该成本含未来功能缓冲，含部署实施费后首单即可大幅回血。营收另需预留增值税约 6%。</div>
+      <div class="warn"><strong>盈亏：</strong>单所月毛利 ≈¥68k，覆盖 Part A ≈¥314k/月 全成本需约 <strong>4–5 个</strong> 500 人所；该成本含未来功能缓冲，含部署实施费后首单即可大幅回血。营收另需预留增值税约 6%。</div>
     </div>
   </section>
 
@@ -644,7 +646,7 @@
   <!-- ====== 附录二 · API Token 价位 ====== -->
   <section class="panel" id="models">
     <h1><span class="tag tagP">附录二</span> 当前 API Token 价位</h1>
-    <p class="ph">每百万 Token（¥/M）· 数据时间 2026-06 · 美元折算 $1=¥7.2。用于确定收费锚点（最高档位最贵模型 ×2），也是 A4「LLM API 成本」的单价底表。</p>
+    <p class="ph">每百万 Token（¥/M）· 数据时间 2026-06 · 美元折算 $1=¥7.2。用于确定收费锚点（最高档位最贵模型 ×2），也是 A4「LLM API 成本」的单价底表。<br>名词：<strong>Token</strong> = 模型计费单位，约等于字数；<strong>输入</strong> = 发给模型的内容（含提示词+检索资料），<strong>输出</strong> = 模型生成的回答；<strong>缓存命中</strong> = 重复内容命中缓存时的更低价（同样的法条/模板反复用，省很多）。</p>
     <div class="win">
       <h3><span class="ico iP">💲</span> 主流模型价位横评</h3>
       <table>
@@ -686,7 +688,7 @@
   <!-- ====== 附录三 · 算力 ====== -->
   <section class="panel" id="apxCompute">
     <h1><span class="tag tagA">附录三</span> 法律 Agent 算力与微调成本</h1>
-    <p class="ph">面向法律 Agent 的微调、评测与私有化验证预算。核心口径：本地 5090 承接日常实验，H800 按月短租承接大模型 LoRA 与客户验证。</p>
+    <p class="ph">面向法律 Agent 的微调、评测与私有化验证预算。核心口径：本地 5090 承接日常实验，H800 按月短租承接大模型 LoRA 与客户验证。<br>名词速查：<strong>微调</strong> = 在通用大模型上用法律数据再训练，让它更懂法律；<strong>LoRA</strong> = 轻量微调（只动少量参数，省卡省钱）；<strong>DPO</strong> = 按"人更喜欢哪个答案"对齐模型；<strong>全参微调 / 继续预训练</strong> = 重训整个模型（最贵，早期不做）；<strong>5090 / H800 / A100 / H100</strong> = 不同档次的 GPU 显卡（越靠后越强越贵）。</p>
 
     <div class="win">
       <h3><span class="ico iA">🖥️</span> 自有算力资产</h3>
