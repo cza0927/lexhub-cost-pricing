@@ -91,7 +91,9 @@
     <button data-t="costB"><span class="dot dB"></span>成本 · 客户律所</button>
     <button data-t="token"><span class="dot dG"></span>Token 用量模型</button>
     <button data-t="pricing"><span class="dot dP"></span>收费方案</button>
-    <button data-t="models"><span class="dot dO"></span>模型定价调研</button>
+    <button data-t="apxCloud"><span class="dot dB"></span>附录一 · 云资源明细</button>
+    <button data-t="models"><span class="dot dO"></span>附录二 · API Token 价位</button>
+    <button data-t="apxCompute"><span class="dot dA"></span>附录三 · 算力</button>
     <div class="foot">
       口径：汇率 $1=¥7.2 · 五险一金按北京 · 面向公众上线<br>
       成本端取<strong style="color:#cbd5e1">非保守估计</strong>，为后续新功能预留缓冲<br>
@@ -543,25 +545,185 @@
     </div>
   </section>
 
-  <!-- ====== 模型定价 ====== -->
-  <section class="panel" id="models">
-    <h1>主流模型定价调研</h1>
-    <p class="ph">每百万 Token · 2026-06 · 折算 $1=¥7.2。用于确定计价锚点（最高档位最贵模型）。</p>
+  <!-- ====== 附录一 · 云资源明细 ====== -->
+  <section class="panel" id="apxCloud">
+    <h1><span class="tag tagB">附录一</span> 云资源明细（方案1 / 方案2 完整细节）</h1>
+    <p class="ph">Part B 云服务器部署的完整测算依据，逐项含用途、口径、说明与官方价格来源。方案1 = 最简地板价；方案2 = 三档区间。</p>
+
     <div class="win">
+      <h3><span class="ico iB">📋</span> 方案2 · 云资源明细区间（逐项含说明）</h3>
       <table>
-        <thead><tr><th>模型</th><th class="n">输入 (¥/M)</th><th class="n">输出 (¥/M)</th><th>原始报价</th></tr></thead>
+        <thead><tr><th>大类</th><th>买/租什么</th><th>用途</th><th class="n">月费区间</th><th class="n">年费区间</th><th>说明</th></tr></thead>
         <tbody>
-          <tr><td>DeepSeek V4（我方主力 · 成本）</td><td class="n">2.2</td><td class="n">3.6</td><td>$0.30 / $0.50</td></tr>
-          <tr><td>通义 Qwen3.5-Plus</td><td class="n">0.8</td><td class="n">4.8</td><td>¥官方</td></tr>
-          <tr><td>豆包 Seed2.0-pro</td><td class="n">3.2</td><td class="n">16</td><td>¥官方</td></tr>
-          <tr><td>Gemini 2.5 Flash</td><td class="n">2.2</td><td class="n">18</td><td>$0.30 / $2.50</td></tr>
-          <tr><td>GPT-4o（主流集合最贵）</td><td class="n">18</td><td class="n">72</td><td>$2.50 / $10</td></tr>
-          <tr><td>Gemini 2.5 Pro</td><td class="n">9</td><td class="n">72</td><td>$1.25 / $10</td></tr>
-          <tr style="background:#f5f3ff"><td><strong>Claude Opus 4.8（最高档位最贵 · 锚点）</strong></td><td class="n">36</td><td class="n">180</td><td>$5 / $25</td></tr>
-          <tr class="sum"><td>LexHub 对外价（锚点 ×2）</td><td class="n">72</td><td class="n">360</td><td>—</td></tr>
+          <tr><td>计算资源</td><td>ECS 云服务器 / 系统盘</td><td>跑 Web、后台服务、聊天、后台任务</td><td class="n">400–1,200</td><td class="n">4,800–14,400</td><td>低端 1 台 4核8G；高端可升规格或加 1 台备用</td></tr>
+          <tr><td>数据库</td><td>RDS PostgreSQL</td><td>用户、案件、消息、邮件索引、审查结果等核心数据</td><td class="n">600–1,800</td><td class="n">7,200–21,600</td><td>2核4G/100GB 起步；数据增长后升 4核8G 或加存储</td></tr>
+          <tr><td>文件存储</td><td>OSS 对象存储</td><td>合同、附件、导出文件和备份归档</td><td class="n">150–600</td><td class="n">1,800–7,200</td><td>1TB 起步；如每人持续上传，按 2–4TB 预留</td></tr>
+          <tr><td>公网访问</td><td>EIP / 公网带宽 / 少量 CDN</td><td>员工通过域名访问系统，支持文件下载</td><td class="n">300–1,200</td><td class="n">3,600–14,400</td><td>低流量可只用 EIP/带宽；下载明显增多再加 CDN</td></tr>
+          <tr><td>Web 防护</td><td>WAF 按量 / 基础防护</td><td>挡常见 Web 攻击、扫描和异常请求</td><td class="n">100–500</td><td class="n">1,200–6,000</td><td>公网访问建议保留，强安全版本再升级</td></tr>
+          <tr><td>日志监控</td><td>SLS + 云监控</td><td>查错误、请求、后台任务和基础审计</td><td class="n">100–600</td><td class="n">1,200–7,200</td><td>只留关键日志是低端；更长留存和更多日志会涨价</td></tr>
+          <tr><td>备份恢复</td><td>RDS 备份 / ECS 快照 / OSS 生命周期</td><td>误删、故障、配置错误时能恢复</td><td class="n">200–800</td><td class="n">2,400–9,600</td><td>正式使用建议至少做数据库自动备份和关键文件生命周期</td></tr>
+          <tr><td>主机安全</td><td>云安全中心基础 / 防病毒 / 漏洞项</td><td>检查服务器风险、病毒和常见漏洞</td><td class="n">50–500</td><td class="n">600–6,000</td><td>轻量版很便宜；漏洞修复、更多主机或增强版会升高</td></tr>
+          <tr><td>域名证书</td><td>域名 / DNS / HTTPS 证书</td><td>正式域名访问和 HTTPS 加密</td><td class="n">20–200</td><td class="n">240–2,400</td><td>免费证书够用时低；商业 SSL 或企业 DNS 另算</td></tr>
+          <tr><td>缓存队列</td><td>Redis / Tair（可选）</td><td>在线状态、任务队列、缓存留扩展空间</td><td class="n">0–340</td><td class="n">0–4,080</td><td>单机最简可不买；多实例或 IM 稳定性要求提高后再加</td></tr>
+          <tr><td>负载均衡</td><td>ALB（可选）</td><td>有多台应用服务器时做统一入口</td><td class="n">0–250</td><td class="n">0–3,000</td><td>一台应用服务器不用买；加第二台后再上</td></tr>
         </tbody>
       </table>
-      <p class="note">来源：各厂商官方定价横评。锚点取最高档位最贵模型 ×2 作对外统一价；备选锚点 GPT-4o×2 = ¥36/¥144。</p>
+      <p class="note">综合口径：云资源月费按 2,500–9,000 元/月 看区间；正式内部生产更建议 5,000–7,000 元/月（年化约 6–8.4 万元）。等保、渗透、安全整改属外采，不并入月费。</p>
+    </div>
+
+    <div class="win">
+      <h3><span class="ico iB">🧾</span> 方案1 · 采购备注（最简清单逐项口径）</h3>
+      <table>
+        <thead><tr><th>子项</th><th>采购口径备注</th></tr></thead>
+        <tbody>
+          <tr><td>ECS（¥400/月）</td><td>4核8G，前后端和后台任务放同一台；官网卡片价折算，再给磁盘留一点余量</td></tr>
+          <tr><td>RDS PostgreSQL（¥600/月）</td><td>高可用版 2核4G/100GB 起步；用托管数据库，避免自己维护备份和故障</td></tr>
+          <tr><td>OSS（¥150/月）</td><td>1TB 起步；标准存储 0.12 元/GB/月，另给请求和少量取回留余量</td></tr>
+          <tr><td>公网访问（¥300/月）</td><td>小带宽或按量流量；不按大流量网站估，给 500 人内部使用留余量</td></tr>
+          <tr><td>WAF（¥100/月）</td><td>按量付费；公网访问时建议保留</td></tr>
+          <tr><td>SLS 日志（¥100/月）</td><td>轻量日志，保留关键日志；不做大规模日志分析，只留排障和基础审计</td></tr>
+          <tr><td>备份（¥200/月）</td><td>RDS 备份 + ECS 快照 + OSS 生命周期；正常安全运行必须留备份预算</td></tr>
+          <tr><td>主机安全（¥50/月）</td><td>云安全中心基础/防病毒级别；轻量安全项，不上复杂安全套件</td></tr>
+          <tr><td>域名证书（¥20/月）</td><td>域名按年摊销，证书先用免费 HTTPS；商业 SSL 暂不买</td></tr>
+          <tr class="sum"><td>合计</td><td>基础估算 ¥1,920/月（¥23,040/年）；建议审批含余量 ¥2,500/月（¥30,000/年），拿这个数做预算申请</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="win">
+      <h3><span class="ico iB">⏸️</span> 本次不计入（按需再加 · 含原因）</h3>
+      <table>
+        <thead><tr><th>项目</th><th>处理方式</th></tr></thead>
+        <tbody>
+          <tr><td>外部 AI/API 调用费</td><td>不计入本次部署预算。DeepSeek、OpenAI、短信、第三方 OCR 等按量调用，单独按用量算（见 Part A · A4）</td></tr>
+          <tr><td>Redis / Tair</td><td>最简方案先不买。单台应用服务器可先不用；以后多台或更高 IM 并发再加</td></tr>
+          <tr><td>ALB 负载均衡</td><td>最简方案先不买。只有上多台应用服务器时才需要</td></tr>
+          <tr><td>CDN</td><td>低到中等流量先不买。文件和静态资源先走 ECS/OSS；下载量变大再加</td></tr>
+          <tr><td>NAT / 云防火墙 / ACR / 跨地域灾备</td><td>不是最简正常运行必需项。后续安全要求或自动化发布复杂后再单独采购</td></tr>
+          <tr><td>企业邮箱账号</td><td>律所已有邮箱就不另买。系统只绑定现有邮箱授权</td></tr>
+          <tr><td>等保 / 渗透测试</td><td>本次不算。若客户、监管或律所内部制度要求，再单独找供应商报价（见 Part B · B5）</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="win">
+      <h3><span class="ico iB">💰</span> 一次性 / 年度外采</h3>
+      <table>
+        <thead><tr><th>项目</th><th class="n">估算区间</th><th>说明</th></tr></thead>
+        <tbody>
+          <tr><td>等保二级 / 三级测评</td><td class="n">30,000–150,000+ / 次</td><td>是否需要看客户、监管、律所内部制度和系统边界</td></tr>
+          <tr><td>渗透测试</td><td class="n">10,000–30,000 / 次</td><td>上线前或客户安全审查时常见</td></tr>
+          <tr><td>安全整改 / 复测</td><td class="n">20,000–80,000</td><td>测评或渗透发现问题后可能产生</td></tr>
+          <tr><td>商业 SSL / 企业 DNS</td><td class="n">0–3,000 / 年</td><td>免费证书够用时为 0；品牌或合规要求时再买</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="win">
+      <h3><span class="ico iB">🔗</span> 价格来源（阿里云官方）</h3>
+      <table>
+        <thead><tr><th>项目</th><th>价格口径</th><th>官方链接</th></tr></thead>
+        <tbody>
+          <tr><td>ECS</td><td>ECS 官网价格卡片</td><td>https://www.aliyun.com/product/ecs</td></tr>
+          <tr><td>RDS PostgreSQL</td><td>RDS PostgreSQL 官网价格卡片</td><td>https://www.aliyun.com/product/rds/postgresql</td></tr>
+          <tr><td>Redis</td><td>阿里云 Redis 定价</td><td>https://www.aliyun.com/price/detail/redis</td></tr>
+          <tr><td>OSS</td><td>标准存储 0.12 元/GB/月</td><td>https://www.aliyun.com/price/detail/oss</td></tr>
+          <tr><td>EIP / 公网带宽</td><td>按地域、带宽、流量计费</td><td>https://www.aliyun.com/price/product#/eip/detail</td></tr>
+          <tr><td>CDN</td><td>中国内地 0–10TB 档 0.24 元/GB</td><td>https://www.aliyun.com/price/detail/cdn</td></tr>
+          <tr><td>ALB</td><td>标准版实例费 0.147 元/小时，LCU 0.049 元/个/小时</td><td>https://www.aliyun.com/price/detail/slb</td></tr>
+          <tr><td>WAF</td><td>SeCU 按量计费</td><td>https://www.aliyun.com/page-source/markets/aliyun/price/detail/waf</td></tr>
+          <tr><td>SLS</td><td>写入 0.4 元/GB，热存储 0.0115 元/GB/天</td><td>https://www.aliyun.com/price/detail/sls</td></tr>
+          <tr><td>云安全中心</td><td>防病毒 / 漏洞修复价格卡片</td><td>https://www.aliyun.com/product/security-center</td></tr>
+        </tbody>
+      </table>
+      <p class="note">⚠️ 正式采购前，请按同一地域、同一规格、同一购买时长重新导出云厂商报价单。实际下单价随地域和活动变化。</p>
+    </div>
+  </section>
+
+  <!-- ====== 附录二 · API Token 价位 ====== -->
+  <section class="panel" id="models">
+    <h1><span class="tag tagP">附录二</span> 当前 API Token 价位</h1>
+    <p class="ph">每百万 Token（¥/M）· 数据时间 2026-06 · 美元折算 $1=¥7.2。用于确定收费锚点（最高档位最贵模型 ×2），也是 A4「LLM API 成本」的单价底表。</p>
+    <div class="win">
+      <h3><span class="ico iP">💲</span> 主流模型价位横评</h3>
+      <table>
+        <thead><tr><th>模型</th><th class="n">输入 (¥/M)</th><th class="n">输出 (¥/M)</th><th class="n">缓存命中</th><th>原始报价 / 备注</th></tr></thead>
+        <tbody>
+          <tr><td>DeepSeek V4（我方主力 · 成本）</td><td class="n">2.2</td><td class="n">3.6</td><td class="n">0.2</td><td>$0.30 / $0.50；缓存命中价更低</td></tr>
+          <tr><td>通义 Qwen3.5-Plus</td><td class="n">0.8</td><td class="n">4.8</td><td class="n">—</td><td>¥官方，国内最低档之一</td></tr>
+          <tr><td>Kimi K2.6</td><td class="n">2</td><td class="n">10</td><td class="n">—</td><td>¥官方，长上下文</td></tr>
+          <tr><td>豆包 Seed2.0-pro</td><td class="n">3.2</td><td class="n">16</td><td class="n">—</td><td>¥官方</td></tr>
+          <tr><td>文心 4.5 Turbo</td><td class="n">3</td><td class="n">9</td><td class="n">—</td><td>¥官方</td></tr>
+          <tr><td>Gemini 2.5 Flash</td><td class="n">2.2</td><td class="n">18</td><td class="n">—</td><td>$0.30 / $2.50</td></tr>
+          <tr><td>Claude Haiku 4.5</td><td class="n">7.2</td><td class="n">36</td><td class="n">0.72</td><td>$1 / $5</td></tr>
+          <tr><td>GPT-4o（主流集合最贵）</td><td class="n">18</td><td class="n">72</td><td class="n">9</td><td>$2.50 / $10</td></tr>
+          <tr><td>Gemini 2.5 Pro</td><td class="n">9</td><td class="n">72</td><td class="n">—</td><td>$1.25 / $10</td></tr>
+          <tr><td>Claude Sonnet 4.6</td><td class="n">21.6</td><td class="n">108</td><td class="n">2.16</td><td>$3 / $15</td></tr>
+          <tr style="background:#f5f3ff"><td><strong>Claude Opus 4.8（最高档位最贵 · 锚点）</strong></td><td class="n">36</td><td class="n">180</td><td class="n">3.6</td><td>$5 / $25</td></tr>
+          <tr class="sum"><td>LexHub 对外价（锚点 ×2）</td><td class="n">72</td><td class="n">360</td><td class="n">—</td><td>统一对外价，不随后端模型变</td></tr>
+        </tbody>
+      </table>
+      <p class="note">锚点取最高档位最贵模型 ×2 作对外统一价；备选锚点 GPT-4o×2 = ¥36/¥144。成本侧主力 DeepSeek（输入 ¥2.2 / 输出 ¥3.6），叠加缓存命中可再降。各家价格随活动 / 版本频繁变动，正式报价以官网为准。</p>
+    </div>
+    <div class="win">
+      <h3><span class="ico iP">🔗</span> 价格来源</h3>
+      <table>
+        <thead><tr><th>厂商</th><th>官方定价页</th></tr></thead>
+        <tbody>
+          <tr><td>DeepSeek</td><td>https://platform.deepseek.com/pricing</td></tr>
+          <tr><td>通义千问（阿里云百炼）</td><td>https://help.aliyun.com/zh/model-studio/billing</td></tr>
+          <tr><td>豆包（火山方舟）</td><td>https://www.volcengine.com/docs/82379/1099320</td></tr>
+          <tr><td>OpenAI</td><td>https://openai.com/api/pricing</td></tr>
+          <tr><td>Google Gemini</td><td>https://ai.google.dev/pricing</td></tr>
+          <tr><td>Anthropic Claude</td><td>https://www.anthropic.com/pricing</td></tr>
+          <tr><td>Kimi（月之暗面）</td><td>https://platform.moonshot.cn/docs/pricing</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== 附录三 · 算力 ====== -->
+  <section class="panel" id="apxCompute">
+    <h1><span class="tag tagA">附录三</span> 算力（框架 · 待填）</h1>
+    <p class="ph">自托管 / GPU 算力的核算界面。结构已搭好，具体数字待选型与询价后填入（🔲 = 待填）。核心问题：何时该把 API 调用迁到自有算力、回本周期多久。</p>
+
+    <div class="win">
+      <h3><span class="ico iA">🖥️</span> 自有算力资产</h3>
+      <table>
+        <thead><tr><th>项目</th><th>规格</th><th class="n">一次性 / 月</th><th>备注</th></tr></thead>
+        <tbody>
+          <tr><td>8 卡 5090 工作站</td><td>RTX 5090 ×8（256G 显存）</td><td class="n">≈ ¥240,000（一次性）</td><td>已在 Part A · A3</td></tr>
+          <tr><td>折旧摊销</td><td>按 3 年直线</td><td class="n">🔲 ≈ ¥6,700 / 月</td><td>待定折旧年限</td></tr>
+          <tr><td>电费 / 托管</td><td>8 卡满载功耗</td><td class="n">🔲 待填</td><td>联合办公供电是否够，需确认</td></tr>
+          <tr><td>A100 等租赁</td><td>按需 1–2 卡</td><td class="n">≈ ¥10,000–20,000/卡/月</td><td>用时计，已在 A3 预算</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="win">
+      <h3><span class="ico iA">⚖️</span> 自建 vs API 经济性（回本测算 · 待填）</h3>
+      <table>
+        <thead><tr><th>口径</th><th class="n">数值</th><th>说明</th></tr></thead>
+        <tbody>
+          <tr><td>自托管可承接的调用类型</td><td class="n">🔲</td><td>Embedding / Rerank / 中小模型推理 / 微调</td></tr>
+          <tr><td>可替代的月 API 成本</td><td class="n">🔲</td><td>替代后每月省多少（对比 A4 LLM ¥8,000）</td></tr>
+          <tr><td>8 卡 5090 等效算力</td><td class="n">🔲</td><td>能跑多大参数模型 / 并发吞吐</td></tr>
+          <tr><td>回本周期</td><td class="n">🔲</td><td>= 设备一次性 ÷ 月节省</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="win">
+      <h3><span class="ico iA">🔧</span> 微调 / 私有化算力（待填）</h3>
+      <table>
+        <thead><tr><th>项目</th><th class="n">估算</th><th>说明</th></tr></thead>
+        <tbody>
+          <tr><td>法律领域微调（LoRA / 全参）</td><td class="n">🔲</td><td>训练卡时 × 单价；数据准备见 Part B 法律专家</td></tr>
+          <tr><td>私有化部署模型推理</td><td class="n">🔲</td><td>客户要求私有大模型时的 GPU 配置</td></tr>
+          <tr><td>评测 / 实验算力</td><td class="n">🔲</td><td>模型横评、回归测试</td></tr>
+        </tbody>
+      </table>
+      <p class="note">本附录为框架占位，等 GPU 选型、电费、微调方案与询价落实后填入具体数字；当前算力现金成本已在 Part A · A3 体现（8 卡 5090 一次性 + A100 月租预算）。</p>
     </div>
   </section>
 
