@@ -122,7 +122,7 @@
         <thead><tr><th>归属</th><th>承担方</th><th>内容</th></tr></thead>
         <tbody>
           <tr><td><span class="tag tagA">A</span></td><td>我们（开发方）</td><td>人员（含年终奖/福利/招聘）· vibecoding · 算力 · 变动调用 · 办公/设备/自有环境 · 财务行政 · 保险 · 税费 · 扩张缓冲</td></tr>
-          <tr><td><span class="tag tagB">B</span></td><td>客户律所</td><td>云服务器部署（方案1/2 逐项）· 北大法宝数据源 · 法律专家（自有律师）· 市场获客 · 等保/渗透，全部在第一个大客户律所公司内</td></tr>
+          <tr><td><span class="tag tagB">B</span></td><td>客户律所</td><td>云服务器部署（方案1/2 逐项）· 法律专家（自有律师）· 市场获客 · 等保/渗透，全部在第一个大客户律所公司内</td></tr>
         </tbody>
       </table>
     </div>
@@ -205,7 +205,7 @@
         <thead><tr><th>子项</th><th>口径 / 用途</th><th class="n">月量</th><th class="n">单价</th><th class="n">月成本 (¥)</th></tr></thead>
         <tbody>
           <tr><td>LLM API</td><td>调用大语言模型的接口费（DeepSeek 为主，少量用更贵的高端模型）。Token = 按字数计费的单位，约等于汉字数</td><td class="n">430M tok</td><td class="n">混合</td><td class="n">8,000</td></tr>
-          <tr><td>外部数据 API 取数</td><td>向外部数据库取数据的按次费用：北大法宝查法条/案例、法规更新、工商信息、裁判文书</td><td class="n">≈40,000 次</td><td class="n">¥0.3/次</td><td class="n">12,000</td></tr>
+          <tr><td>外部数据 API 取数</td><td>向外部数据库取数据的按次费用：法规/案例检索、法规更新、工商信息、裁判文书</td><td class="n">≈40,000 次</td><td class="n">¥0.3/次</td><td class="n">12,000</td></tr>
           <tr><td>语音识别 ASR</td><td>把用户说的话转成文字（ASR = 语音识别），用现成云服务，按音频时长计费</td><td class="n">≈1,600 小时</td><td class="n">¥2.5/小时</td><td class="n">4,000</td></tr>
           <tr><td>OCR（扫描合同）</td><td>把扫描件 / 图片里的字识别出来（OCR = 文字识别）；约 30% 合同是扫描件，需要它才能读</td><td class="n">≈20,000 页</td><td class="n">¥0.08/页</td><td class="n">1,600</td></tr>
           <tr><td>Embedding / Rerank</td><td>把法条 / 案例转成向量并重排检索结果，支撑 AI 精准找资料（RAG = 让 AI 带着检索到的资料回答）</td><td class="n">—</td><td class="n">—</td><td class="n">800</td></tr>
@@ -331,8 +331,14 @@
 
   <!-- ====== 成本 B ====== -->
   <section class="panel" id="costB">
-    <h1><span class="tag tagB">PART B</span> 客户律所承担的部署 / 数据 / 专家成本</h1>
-    <p class="ph">生产部署、数据源、法律专家、市场获客均由<strong>第一个大客户律所</strong>承担，不进我们 P&L。云服务器成本基于开发团队测算的方案1（最简）/ 方案2（三档），逐项可溯源至阿里云官网价。</p>
+    <h1><span class="tag tagB">PART B</span> 客户律所承担的部署 / 专家 / 安全成本</h1>
+    <p class="ph">生产部署、法律专家、市场获客均由<strong>第一个大客户律所</strong>承担，不进我们 P&L。云服务器成本逐项可溯源至阿里云官网价。</p>
+    <div class="callout" style="border-left-color:var(--b);background:var(--b-bg)">
+      <strong>方案1 和方案2 不是二选一，是同一笔云服务器开销的两种看法：</strong><br>
+      · <strong>方案1（B1）= 能跑起来的最低配</strong>，一台服务器 + 基础数据库/存储/安全，地板价 ≈¥2,500/月。<br>
+      · <strong>方案2（B1+）= 正式生产更稳妥的预算</strong>，含余量、按"低配 / 推荐 / 安全增强"分三档。<br>
+      👉 <strong>实际做预算就用方案2 的「推荐正式运行」≈¥5,000–7,000/月</strong>；方案1 只是告诉你最省能省到多少。两者都不含等保/渗透（见 B4），那是一次性外采。
+    </div>
 
     <div class="win">
       <h3><span class="ico iB">☁️</span> B1 · 云服务器部署（方案1 · 最简采购清单）</h3>
@@ -353,7 +359,7 @@
           <tr class="sum"><td>建议审批（含余量）</td><td>拿这个数做预算申请</td><td></td><td class="n">2,500</td><td class="n">30,000</td></tr>
         </tbody>
       </table>
-      <p class="note">本次不计入：外部 AI/API 调用费（按用量另算，见 A4）、Redis/Tair、ALB、CDN、NAT/云防火墙、企业邮箱、等保/渗透（见 B5）。价格来源：阿里云 ECS / RDS / OSS / EIP / WAF / SLS / 云安全中心官网价格卡片。</p>
+      <p class="note">本次不计入：外部 AI/API 调用费（按用量另算，见 A4）、Redis/Tair、ALB、CDN、NAT/云防火墙、企业邮箱、等保/渗透（见 B4）。价格来源：阿里云 ECS / RDS / OSS / EIP / WAF / SLS / 云安全中心官网价格卡片。</p>
     </div>
 
     <div class="win">
@@ -370,19 +376,7 @@
     </div>
 
     <div class="win">
-      <h3><span class="ico iB">📚</span> B2 · 法律数据源 · 北大法宝</h3>
-      <table>
-        <thead><tr><th>子项</th><th>说明</th><th class="n">费用 (¥)</th></tr></thead>
-        <tbody>
-          <tr><td>北大法宝企业 API / 数据授权</td><td>依托客户搞定；随席位 / 数据范围浮动</td><td class="n"><span class="blank">50,000–200,000 / 年</span></td></tr>
-          <tr><td>月摊</td><td>按年授权摊销</td><td class="n">≈ 4,000–17,000 / 月</td></tr>
-        </tbody>
-      </table>
-      <p class="note">⚠️ 面向公众上线时，北大法宝的转授权 / 公开使用条款需单独确认；金额为按报价拍板项。</p>
-    </div>
-
-    <div class="win">
-      <h3><span class="ico iB">⚖️</span> B3 · 法律专家 / 数据标注（客户自有律师）</h3>
+      <h3><span class="ico iB">⚖️</span> B2 · 法律专家 / 数据标注（客户自有律师）</h3>
       <table>
         <thead><tr><th>项目</th><th>说明 / 用途</th><th class="n">口径</th></tr></thead>
         <tbody>
@@ -394,7 +388,7 @@
     </div>
 
     <div class="win">
-      <h3><span class="ico iB">📣</span> B4 · 市场 / 获客</h3>
+      <h3><span class="ico iB">📣</span> B3 · 市场 / 获客</h3>
       <table>
         <thead><tr><th>项目</th><th>说明</th><th class="n">口径</th></tr></thead>
         <tbody>
@@ -404,25 +398,24 @@
     </div>
 
     <div class="win">
-      <h3><span class="ico iB">🔐</span> B5 · 合规与一次性外采（方案2）</h3>
+      <h3><span class="ico iB">🔐</span> B4 · 安全合规外采（一次性 / 年度）</h3>
       <table>
-        <thead><tr><th>子项</th><th>说明</th><th class="n">估算 (¥)</th></tr></thead>
+        <thead><tr><th>子项</th><th>是什么 / 为什么要</th><th>钱出给谁</th><th class="n">估算 (¥)</th></tr></thead>
         <tbody>
-          <tr><td>等保二级 / 三级测评</td><td>看客户 / 监管 / 律所制度与系统边界</td><td class="n">30,000–150,000+ / 次</td></tr>
-          <tr><td>渗透测试</td><td>上线前或客户安全审查时常见</td><td class="n">10,000–30,000 / 次</td></tr>
-          <tr><td>安全整改 / 复测</td><td>测评 / 渗透发现问题后</td><td class="n">20,000–80,000</td></tr>
-          <tr><td>商业 SSL / 企业 DNS</td><td>免费证书够用时为 0</td><td class="n">0–3,000 / 年</td></tr>
-          <tr><td>定级备案（公安机关）</td><td>官方手续</td><td class="n">免费</td></tr>
+          <tr><td>等保测评（等级保护）</td><td>国家强制的网络安全合规测评，按系统重要性分二/三级；法律数据敏感通常要三级。不过等保拿不到上线许可</td><td>公安部认可的<strong>第三方等保测评机构</strong>（定级备案交公安机关，免费）</td><td class="n">30,000–150,000+ / 次</td></tr>
+          <tr><td>渗透测试</td><td>请安全公司模拟黑客攻击，主动找系统漏洞；客户安全审查或上线前常要求</td><td><strong>网络安全 / 渗透测试服务商</strong></td><td class="n">10,000–30,000 / 次</td></tr>
+          <tr><td>安全整改 / 复测</td><td>测评或渗透查出问题后，买安全设备/改系统补漏，再复测过关</td><td><strong>安全厂商 / 集成商</strong> + 测评机构复测费</td><td class="n">20,000–80,000</td></tr>
+          <tr><td>商业 SSL / 企业 DNS</td><td>网址加密证书与域名解析；免费证书够用时可为 0</td><td>证书厂商 / 云厂商</td><td class="n">0–3,000 / 年</td></tr>
+          <tr><td>定级备案</td><td>等保第一步，向公安机关申报系统安全级别</td><td>公安机关（官方手续）</td><td class="n">免费</td></tr>
         </tbody>
       </table>
-      <p class="note">外采费用不放进月费总额，单独按次 / 年准备；大所多已过等保、有现成安全设备，整改可大幅抵扣。</p>
+      <p class="note">这些都是<strong>由客户律所承担</strong>（系统部署在客户机房、数据在客户侧）。属一次性/年度外采，不进月费；且大所多已过等保、有现成安全设备，整改成本可大幅抵扣。是否要做、做几级，取决于监管与客户内部制度。</p>
     </div>
 
     <div class="win">
       <h3><span class="ico iB">Σ</span> Part B 合计（客户承担）</h3>
       <div class="kpis">
         <div class="kpi B"><div class="v">¥5–7k/月</div><div class="l">云服务器（方案2 推荐档）</div></div>
-        <div class="kpi B"><div class="v">¥5–20万/年</div><div class="l">北大法宝数据源</div></div>
         <div class="kpi B"><div class="v">¥3–15万/次</div><div class="l">等保 + 渗透 + 整改（一次性）</div></div>
         <div class="kpi B"><div class="v">客户内部</div><div class="l">法律专家 + 市场获客</div></div>
       </div>
@@ -604,7 +597,7 @@
           <tr><td>CDN</td><td>低到中等流量先不买。文件和静态资源先走 ECS/OSS；下载量变大再加</td></tr>
           <tr><td>NAT / 云防火墙 / ACR / 跨地域灾备</td><td>不是最简正常运行必需项。后续安全要求或自动化发布复杂后再单独采购</td></tr>
           <tr><td>企业邮箱账号</td><td>律所已有邮箱就不另买。系统只绑定现有邮箱授权</td></tr>
-          <tr><td>等保 / 渗透测试</td><td>本次不算。若客户、监管或律所内部制度要求，再单独找供应商报价（见 Part B · B5）</td></tr>
+          <tr><td>等保 / 渗透测试</td><td>本次不算。若客户、监管或律所内部制度要求，再单独找供应商报价（见 Part B · B4）</td></tr>
         </tbody>
       </table>
     </div>
