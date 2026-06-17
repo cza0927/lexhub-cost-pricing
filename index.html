@@ -204,7 +204,7 @@
       <table>
         <thead><tr><th>子项</th><th>口径 / 用途</th><th class="n">月量</th><th class="n">单价</th><th class="n">月成本 (¥)</th></tr></thead>
         <tbody>
-          <tr><td>LLM API</td><td>调用大语言模型的接口费（DeepSeek 为主，少量用更贵的高端模型）。Token = 按字数计费的单位，约等于汉字数</td><td class="n">430M tok</td><td class="n">混合</td><td class="n">8,000</td></tr>
+          <tr><td>LLM API</td><td>调用大语言模型的接口费（主力 DeepSeek V4 Pro，少量用更贵的高端模型）。Token = 按字数计费的单位，约等于汉字数</td><td class="n">430M tok</td><td class="n">混合</td><td class="n">8,000</td></tr>
           <tr><td>外部数据 API 取数</td><td>向外部数据库取数据的按次费用：法规/案例检索、法规更新、工商信息、裁判文书</td><td class="n">≈40,000 次</td><td class="n">¥0.3/次</td><td class="n">12,000</td></tr>
           <tr><td>语音识别 ASR</td><td>把用户说的话转成文字（ASR = 语音识别），用现成云服务，按音频时长计费</td><td class="n">≈1,600 小时</td><td class="n">¥2.5/小时</td><td class="n">4,000</td></tr>
           <tr><td>OCR（扫描合同）</td><td>把扫描件 / 图片里的字识别出来（OCR = 文字识别）；约 30% 合同是扫描件，需要它才能读</td><td class="n">≈20,000 页</td><td class="n">¥0.08/页</td><td class="n">1,600</td></tr>
@@ -487,12 +487,13 @@
       <div class="anchor">
         <strong>统一计价规则：对外价 = 最高档位最贵模型 × 2。</strong>不论后端实际调用哪个模型，对外一口价；后端跑便宜模型即为利润。
         <br>默认锚点 = 参考表最贵的 <strong>Claude Opus 4.8（¥36 入 / ¥180 出）</strong> → ×2 = <strong>¥72 入 / ¥360 出</strong>。锚点可切换（见下）。
+        <br><span style="color:var(--mut)">注：锚点只是对外报价的"对标参照物"，不是我们实际用的模型——我们后端实际跑 <strong>DeepSeek V4 Pro（成本 ¥3.1/¥6.3）</strong>，对标价与实际成本的差额即利润。</span>
       </div>
       <table>
         <thead><tr><th>锚点模型</th><th class="n">原价 入/出 (¥/M)</th><th class="n">×2 对外价 (¥/M)</th></tr></thead>
         <tbody>
-          <tr><td><strong>Claude Opus 4.8（默认 · 最贵）</strong></td><td class="n">36 / 180</td><td class="n">72 / 360</td></tr>
-          <tr><td>GPT-4o（主流集合最贵 · 备选）</td><td class="n">18 / 72</td><td class="n">36 / 144</td></tr>
+          <tr><td><strong>Claude Opus 4.8（默认锚点 · 全表最贵）</strong></td><td class="n">36 / 180</td><td class="n">72 / 360</td></tr>
+          <tr><td>GPT-4o（备选锚点 · 你点名的主流模型里最贵）</td><td class="n">18 / 72</td><td class="n">36 / 144</td></tr>
         </tbody>
       </table>
       <table style="margin-top:12px">
@@ -508,7 +509,7 @@
         <div class="kpi"><div class="v">¥8,000</div><div class="l">月成本（非保守口径）</div></div>
         <div class="kpi G"><div class="v">~86%</div><div class="l">Token 毛利率</div></div>
       </div>
-      <p class="note">成本下限（纯 DeepSeek）约 ¥1,071；此处按非保守口径（含高端模型 + 未来功能）计 ¥8,000。备选锚点 GPT-4o×2 下月收入 ≈¥25,150。锚点为参数，一行可切换。</p>
+      <p class="note">成本下限（纯 DeepSeek V4 Pro，¥3.1/¥6.3）约 ¥1,619；此处按非保守口径（含高端模型 + 未来功能）计 ¥8,000。备选锚点 GPT-4o×2 下月收入 ≈¥25,150。锚点为参数，一行可切换。</p>
     </div>
 
     <div class="win">
@@ -645,7 +646,7 @@
       <table>
         <thead><tr><th>模型</th><th class="n">输入 (¥/M)</th><th class="n">输出 (¥/M)</th><th class="n">缓存命中</th><th>原始报价 / 备注</th></tr></thead>
         <tbody>
-          <tr><td>DeepSeek V4（我方主力 · 成本）</td><td class="n">2.2</td><td class="n">3.6</td><td class="n">0.2</td><td>$0.30 / $0.50；缓存命中价更低</td></tr>
+          <tr style="background:#ecfdf5"><td><strong>DeepSeek V4 Pro（我方主力 · 成本锚）</strong></td><td class="n">3.1</td><td class="n">6.3</td><td class="n">0.3</td><td>$0.435 / $0.87；我们实际跑的模型，缓存命中价更低</td></tr>
           <tr><td>通义 Qwen3.5-Plus</td><td class="n">0.8</td><td class="n">4.8</td><td class="n">—</td><td>¥官方，国内最低档之一</td></tr>
           <tr><td>Kimi K2.6</td><td class="n">2</td><td class="n">10</td><td class="n">—</td><td>¥官方，长上下文</td></tr>
           <tr><td>豆包 Seed2.0-pro</td><td class="n">3.2</td><td class="n">16</td><td class="n">—</td><td>¥官方</td></tr>
@@ -659,7 +660,7 @@
           <tr class="sum"><td>LexHub 对外价（锚点 ×2）</td><td class="n">72</td><td class="n">360</td><td class="n">—</td><td>统一对外价，不随后端模型变</td></tr>
         </tbody>
       </table>
-      <p class="note">锚点取最高档位最贵模型 ×2 作对外统一价；备选锚点 GPT-4o×2 = ¥36/¥144。成本侧主力 DeepSeek（输入 ¥2.2 / 输出 ¥3.6），叠加缓存命中可再降。各家价格随活动 / 版本频繁变动，正式报价以官网为准。</p>
+      <p class="note"><strong>两个"锚"别混：成本锚</strong>=我们实际跑、实际付钱的模型，即 <strong>DeepSeek V4 Pro（¥3.1入/¥6.3出）</strong>，叠加缓存命中可再降；<strong>定价锚</strong>=对外报价对标的模型，取最高档位最贵的 Claude Opus ×2（备选 GPT-4o×2=¥36/¥144）。两者差价就是我们的利润。各家价格随活动/版本频繁变动，正式报价以官网为准。</p>
     </div>
     <div class="win">
       <h3><span class="ico iP">🔗</span> 价格来源</h3>
