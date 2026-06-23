@@ -214,18 +214,17 @@
           <tr><td>法律研究 Agent</td><td>限定法域检索、效力判断、规则比较与引用</td><td>官方/授权法源、版本元数据</td><td>引用式备忘录、未解决问题</td><td>不得跨法域混引或引用失效文本</td></tr>
           <tr><td>工作助理 Agent</td><td>邮件摘要、任务抽取、排期、提醒与协作</td><td>案件、邮件、日历、任务权限</td><td>草稿、待办、提醒、日程建议</td><td>未确认不得对外发送或改变关键状态</td></tr>
         </tbody></table></div>
-        <div class="section-head"><div><h2>数据与训练闭环</h2></div></div>
+        <div class="section-head"><div><h2>核心 AI 工程：模型、数据与智能体脚手架（Agent Harness）全链路</h2></div><p>使得大语言模型在严苛的真实跨国法律业务上可用，绝非简单的“写写提示词套壳”。基于现实中极为复杂的俄语合规、审查标准与中转流程，项目需要进行极具挑战的深水区工程建设，向合作方交付的每一项能力背后都是重度的技术治理成本。</p></div>
         <div class="flow">
-          <div class="flow-step"><b>法源授权</b><span>来源、版权、有效性、更新时间登记</span></div>
-          <div class="flow-step"><b>清洗切分</b><span>去重、OCR 校正、结构恢复、法域标签</span></div>
-          <div class="flow-step"><b>双语对齐</b><span>条款/句段对齐、术语和实体锁定</span></div>
-          <div class="flow-step"><b>专家标注</b><span>风险、依据、建议、难例与拒答边界</span></div>
-          <div class="flow-step"><b>金标评测</b><span>专家一致性确认，形成不可训练测试集</span></div>
-          <div class="flow-step"><b>检索增强与微调</b><span>先采用检索和结构化工作流，必要时再开展 LoRA 或分类器实验</span></div>
-          <div class="flow-step"><b>线上反馈</b><span>律师修订→误差归因→回归测试→新版本</span></div>
+          <div class="flow-step"><b>1. 语料脏数据清洗与萃取工程</b><span>海量 PDF、法案的 OCR 纠错重排，剔除无效噪点信息，恢复文档拓扑结构，打上包含细颗粒度语言与属地法域等数百类标签，萃取真正具备训练价值的数据真金。</span></div>
+          <div class="flow-step"><b>2. 模型后训练与微调（Post-Training & Fine-tuning）</b><span>通用模型严重缺乏当地法律领域的规范思维能力。需依靠资深律师建立数万计的 SFT（监督式微调）深标语料和 DPO（对齐偏好）人工反馈对，引导模型改变泛泛空谈，真正养成如同法务专家的严谨逻辑“法言法语”。</span></div>
+          <div class="flow-step"><b>3. Agent 脚手架与基建工程（Agent Harness Engineering）</b><span>为了防范大模型的“灾难性幻觉”，需投入海量时间搭建底座环境。涵盖工作流状态长效保持、复杂业务意图精细路由分发、API 工具挂载调用隔离防错网、多路并发检验和随时切管的人工审查防线等“硬核包身工程”。</span></div>
+          <div class="flow-step"><b>4. 中俄双语超精细关联对齐</b><span>将跨境条款、特殊法律词汇体系化。实施条款约束级的强对齐干预及动态外挂术语一致性干预字典，解决双向语义对碰与知识实体漂移。</span></div>
+          <div class="flow-step"><b>5. 专家金标准严格评测靶场建设</b><span>模型能力“按下一头、翘起一边”极易引发业务灾难灾难。唯有不断运行千百遍基准验证：引入严格的“黄金标定”，将模型进行多维压力测试。</span></div>
+          <div class="flow-step"><b>6. 律师在环纠偏与灰度循环（Human-in-the-loop）</b><span>每一条由人工驳回、修正的反馈会被引擎截获成反向溯源代码，进入到长线归因体系，形成下一版本强修复回归集的滚雪球正向增长闭环。</span></div>
         </div>
         <div class="grid g2 section">
-          <div class="card"><h3>训练资产分层</h3><ul class="plain-list"><li><b>知识库：</b>法律法规、解释、规则、模板及有效性元数据。</li><li><b>训练集：</b>可用于分类、抽取、翻译与建议生成的已授权样本。</li><li><b>金标集：</b>50 份深标合同 + 每国难例，不进入训练。</li><li><b>回归集：</b>500 份去敏合同/文书，版本发布前全量跑测。</li></ul></div>
+          <div class="card"><h3>深水区训练资产分层管控</h3><ul class="plain-list"><li><b>外挂知识库：</b>高度结构化整理的法律法规、模板库、规则库和有效性元数据（保障输出基底不过时）。</li><li><b>高净值训练集：</b>通过重度脱敏并用于 SFT 及推理演逻辑生成的被授权核心对齐语料库。</li><li><b>黄金评测集（Gold Standard）：</b>针对<strong>每一类子类细分合同</strong>（如供销、特许权转让等）绝对配置 <strong>不少于 49 份</strong> 由高阶双专审律师双盲标注好的权威基线样本样本集；绝对隔离验证准绳，杜绝泄露污染至大模型的训练集中以保持评测绝对客观权威性。</li><li><b>灰度回归集：</b>500 份真实脱敏混淆池集，用以保障版本上线的稳定性，对每一个细微功能修正进行全面撒网排雷测试。</li></ul></div>
           <div class="card"><h3>Agent 上线验收条件</h3><ul class="plain-list"><li>结构抽取、风险召回、引用正确率与双语一致性分开计分。</li><li>高风险错误（法域错、金额错、否定翻转、伪造法源）零容忍。</li><li>新版本必须比基线提升，且不使已有国家或合同类型回退。</li><li>生产输出显示证据、版本、置信提示和人工复核状态。</li></ul></div>
         </div>
         <div class="callout danger section"><strong>不是所有问题都用微调解决：</strong>法条更新优先进入可版本化知识库；业务步骤优先采用可测试的结构化工作流；只有稳定、重复且具备足够高质量标签的误差，才进入微调候选。</div>
