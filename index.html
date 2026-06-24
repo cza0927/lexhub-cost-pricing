@@ -61,6 +61,10 @@
     @media(max-width:640px){.content{padding:0}.page{min-height:100vh;padding:22mm 22px 50px 32px;box-shadow:none}.page:before{left:20px;top:22mm;bottom:18mm}.running-head{margin-bottom:12mm}.hero h1{margin-top:16mm;font-size:29px}.g2,.g3,.g4,.country-grid{grid-template-columns:1fr}.g4>.card{border-left:0;border-top:1px solid var(--rule)}.week{grid-template-columns:1fr;gap:1mm}.tabs{position:sticky;top:49px;z-index:10;background:#fff}.tab-btn{flex:1}.section-head{display:block}.section-head p{margin-top:2mm}h1{font-size:24px}.cover-row{grid-template-columns:28mm 1fr}}
     @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
     @page{size:A4;margin:0}
+    body.exporting .rail,body.exporting .mobile-head{display:none}
+    body.exporting .content{padding:0}
+    body.exporting .page{display:block!important;width:210mm;min-height:auto;margin:0 auto;box-shadow:none}
+    body.exporting .card,body.exporting .table-wrap,body.exporting .flow-step,body.exporting .week{break-inside:avoid}
     @media print{body{background:#fff}.rail,.mobile-head,.tabs{display:none!important}.app{display:block}.content{padding:0}.page,.page.on{display:block!important;width:210mm;min-height:297mm;margin:0;padding:17mm 17mm 19mm 21mm;box-shadow:none;break-after:page;page-break-after:always}.tab-panel{display:block!important}.card,.table-wrap,.flow-step,.week{break-inside:avoid}.roadmap{overflow:visible}.running-head{margin-bottom:12mm}}
   </style>
 </head>
@@ -131,7 +135,7 @@
 
       <section class="page" id="positioning">
         <p class="eyebrow">第一章</p><h1>项目背景与合作目标</h1>
-        <p class="lead">本项目不止于机器翻译或合同审查插件，而是为中国、俄罗斯及中亚地区的跨境法律业务打造一套双语协同工作台。核心目标是在统一的客户、案件、文件和任务管理框架下，把中俄两种语言的法律工作融为一体，让跨境团队在完整保留原文法律效力与证据属性的前提下，共同完成案件的理解、审查、内部沟通与最终交付。</p>
+        <p class="lead">本项目定位为一套面向中国、俄罗斯及中亚地区跨境法律业务的双语协同工作台，而非单一的机器翻译或合同审查插件。其核心目标，是在统一的客户、案件、文件与任务管理框架下，实现中俄两种语言法律工作的深度融合，使跨境团队在完整保留原文法律效力与证据属性的前提下，协同完成案件的理解、审查、内部沟通与最终交付。</p>
         <div class="section-head"><div><h2>目标客户与核心场景</h2></div></div>
         <div class="grid g3">
           <div class="card"><h3>中国律所与企业法务</h3><ul class="plain-list"><li>看懂俄语/当地语言合同与来函</li><li>快速定位准据法、争议解决与履约风险</li><li>把中文意见安全转换为俄文交付</li></ul></div>
@@ -149,7 +153,7 @@
       </section>
 
       <section class="page" id="product">
-        <p class="eyebrow">第二章</p><h1>产品与业务方案</h1><p class="lead">产品架构围绕三大支柱：核心法律专业能力、双语跨国协同能力，以及律师日常实务管理。系统内的所有功能和操作都与具体的客户、案件、文件和责任人绑定，并沉淀为结构化、可追溯的全流程记录，从而摆脱传统 AI 一问一答、彼此割裂的局限。</p>
+        <p class="eyebrow">第二章</p><h1>产品与业务方案</h1><p class="lead">产品架构围绕三大支柱：核心法律专业能力、双语跨国协同能力，以及律师日常实务管理。系统内的所有功能与操作均与具体的客户、案件、文件及责任人绑定，并沉淀为结构化、可追溯的全流程记录，从而改变传统 AI 工具孤立应答、彼此割裂的局限。</p>
         <div class="section-head"><div><h2>核心法律业务功能</h2></div></div>
         <div class="grid g2">
           <div class="card"><span class="tag agent">核心 01</span><h2>合同审查</h2><p>解析 PDF、Word 和扫描件；识别主体、金额、期限、准据法与争议条款；按国别审查规则库扫描风险；输出高、中、低风险等级、原文位置、法源依据、修改建议与双语报告。</p></div>
@@ -176,7 +180,7 @@
 
       <section class="page" id="bilingual">
         <p class="eyebrow">第三章</p><h1>中俄双语法律工作机制</h1>
-        <p class="lead">系统在后台统一维护一致的案件事实与业务状态，在前端为中俄双方各自提供母语工作视图：俄语用户的界面、任务提醒、消息和智能体处理结果全部为俄文，中方用户同理。在此基础上，双方可随时调出双语对照，查看原文出处、修订批注与双向确认记录，保证跨国沟通信息透明、逐项对齐。</p>
+        <p class="lead">系统在后台统一维护一致的案件事实与业务状态，在前端为中俄双方各自提供母语工作视图：俄语用户的界面、任务提醒、消息与智能体处理结果均为俄文，中方用户亦然。在此基础上，双方可随时调阅双语对照，查看原文出处、修订批注与双向确认记录，保证跨国沟通信息透明、逐项对齐。</p>
         <div class="grid g3">
           <div class="card kpi"><div class="value">UI 全量双语</div><div class="label">菜单、字段、错误、通知、帮助与模板</div></div>
           <div class="card kpi"><div class="value">内容即时转换</div><div class="label">消息、邮件、任务、批注、文件与报告</div></div>
@@ -214,13 +218,13 @@
           <tr><td>法律研究 Agent</td><td>限定法域检索、效力判断、规则比较与引用</td><td>官方/授权法源、版本元数据</td><td>引用式备忘录、未解决问题</td><td>不得跨法域混引或引用失效文本</td></tr>
           <tr><td>工作助理 Agent</td><td>邮件摘要、任务抽取、排期、提醒与协作</td><td>案件、邮件、日历、任务权限</td><td>草稿、待办、提醒、日程建议</td><td>未确认不得对外发送或改变关键状态</td></tr>
         </tbody></table></div>
-        <div class="section-head"><div><h2>核心 AI 工程：模型、数据与智能体脚手架（Agent Harness）全链路</h2></div><p>要让大语言模型真正胜任跨国法律业务，远不是“写几句提示词、套个壳”那么简单。面对俄语法律合规、审查标准和跨境流程的复杂性，项目需要扎实的底层工程投入——交付给合作方的每一项能力，背后都是大量的技术治理工作。</p></div>
+        <div class="section-head"><div><h2>核心 AI 工程：模型、数据与智能体脚手架（Agent Harness）全链路</h2></div><p>要使大语言模型真正胜任跨国法律业务，远非编写若干提示词、封装一层接口即可实现。面对俄语法律合规、审查标准与跨境流程的高度复杂性，项目须投入扎实的底层工程；交付给合作方的每一项能力，背后均对应大量的技术治理工作。</p></div>
         <div class="flow">
           <div class="flow-step"><b>1. 语料清洗与提炼</b><span>对海量 PDF 和法规文本做 OCR 纠错与重排，剔除噪声、恢复文档结构，并打上语言、所属法域等数百类细粒度标签，从中筛选出真正具备训练价值的数据。</span></div>
           <div class="flow-step"><b>2. 模型后训练与微调（Post-Training & Fine-tuning）</b><span>通用模型缺乏当地法律的专业思维。需由资深律师标注数万条 SFT（监督微调）语料和 DPO（偏好对齐）反馈对，引导模型摆脱泛泛而谈，养成法律人应有的严谨逻辑和专业表达。</span></div>
           <div class="flow-step"><b>3. Agent 脚手架与基础设施（Agent Harness Engineering）</b><span>为防范大模型的严重幻觉，需要投入大量精力搭建底层运行环境，包括工作流状态的持续保持、业务意图的精准路由、API 工具调用的隔离与防错、多路并发校验，以及可随时介入的人工审查防线。</span></div>
           <div class="flow-step"><b>4. 中俄双语精细对齐</b><span>将跨境条款和专业法律词汇体系化整理，在条款层面做强制对齐，并外挂动态术语字典锁定一致性，解决双向语义错位和关键实体漂移的问题。</span></div>
-          <div class="flow-step"><b>5. 专家金标评测体系建设</b><span>模型能力往往“按下葫芦浮起瓢”，稍有偏差就可能酿成业务事故。唯有建立严格的金标准基线，对模型反复做多维度压力测试，才能守住质量底线。</span></div>
+          <div class="flow-step"><b>5. 专家金标评测体系建设</b><span>模型能力提升往往存在顾此失彼的风险，任一维度的偏差都可能引发业务事故。须建立严格的金标准基线，对模型进行反复的多维度压力测试，以确保质量稳定可控。</span></div>
           <div class="flow-step"><b>6. 律师在环纠偏与灰度迭代（Human-in-the-loop）</b><span>律师每一次驳回或修正都会被系统记录、归因，沉淀进下一版本的回归测试集，让模型在持续迭代中不断收敛、稳步提升。</span></div>
         </div>
         <div class="grid g2 section">
@@ -233,8 +237,8 @@
       <section class="page" id="countries">
         <p class="eyebrow">第五章</p><h1>六国法律库与数据建构 · 同步平行推进</h1><p class="lead">本项目对涉及的六个国别——俄罗斯、哈萨克斯坦、乌兹别克斯坦、吉尔吉斯斯坦、塔吉克斯坦、土库曼斯坦——采取<strong>同步平行</strong>的建设策略：六国共用同一套技术底座、数据管线、工作包模板与质量标准，因而每个国别所需建设的内容高度同构，可在统一节奏下并行展开，而不必逐国串行等待。但在核心法律输出上，各国各自建立完全独立的法源清单、术语库、合同审查规则、金标评测集、专项 Agent 版本与本地专家核准链，严禁跨法域混用未经验证或边界模糊的结论。发布节奏按各国数据可得性与专家到位程度分级，但建设工作六线并进、互不阻塞。</p>
         <div class="country-grid" id="country-cards"></div>
-        <div class="section-head"><div><h2>一、六国通用的标准实施路径（六线并行，逐项细化）</h2></div><p>同一套六阶段流水线在六个国别上同时运行；下表说明每一阶段“具体怎么做”。</p></div>
-        <div class="table-wrap"><table><thead><tr><th>阶段</th><th>具体怎么开展</th><th>最低产物</th><th>通过条件</th></tr></thead><tbody>
+        <div class="section-head"><div><h2>一、六国通用标准实施路径（六阶段流水线并行运行）</h2></div><p>同一套六阶段流水线在六个国别上并行运行，下表逐阶段列明实施要点、最低产物与通过条件。</p></div>
+        <div class="table-wrap"><table><thead><tr><th>阶段</th><th>实施要点</th><th>最低产物</th><th>通过条件</th></tr></thead><tbody>
           <tr><td>① 法源确认</td><td>逐国梳理宪法、民商法典、专门法、行政法规及司法/仲裁规则的官方或授权来源；登记效力层级、生效与失效日期、语言版本与使用授权；建立失效与修订的版本对照。</td><td>法源登记册 + 每国更新责任人</td><td>当地法律专家书面确认</td></tr>
           <tr><td>② 数据归集与语料工程</td><td>对“可公开在线获取”的法规、公报与裁决进行系统化定向归集与版本比对；对“合作方/专家提供”的去敏合同与文书做 OCR、清洗、结构恢复，并打上法域/语言/文种/合同类型标签。</td><td>法规、合同、仲裁与术语四类数据包</td><td>抽样准确率达到约定阈值</td></tr>
           <tr><td>③ 审查规则</td><td>按国别定义合同类别、风险分类、风险等级、法源依据与修改建议；以俄罗斯规则库为模板，由各国顾问校准本国差异。</td><td>国别专属审查规则 v1 + 典型案例</td><td>两名专家对同一样本结论可复现</td></tr>
@@ -243,8 +247,8 @@
           <tr><td>⑥ 实案验收</td><td>由当地律师用真实案件盲测，记录接受/修改/拒绝原因，逐国达到门槛后才标记可商用。</td><td>验收报告 + 修订集 + 上线限制</td><td>达到国别门槛后才标记可商用</td></tr>
         </tbody></table></div>
 
-        <div class="section-head"><div><h2>二、六线并进 × 双方两条线：研发团队线与合作方团队线协同</h2></div><p>每个国别的建设都不是单方推进，而是“研发团队线”与“合作方团队线”在同一条六阶段流水线上并行咬合；六国同步，即六组这样的双线协同同时运行。</p></div>
-        <div class="table-wrap"><table><thead><tr><th>阶段</th><th>研发团队这条线</th><th>合作方团队这条线</th></tr></thead><tbody>
+        <div class="section-head"><div><h2>二、建设主体与分工：研发团队与合作方双线协同</h2></div><p>各国别建设均由研发团队与合作方协同推进，二者在同一六阶段流水线上各司其职、并行配合；六国同步建设，即六组双方协同同时展开。</p></div>
+        <div class="table-wrap"><table><thead><tr><th>阶段</th><th>研发团队职责</th><th>合作方职责</th></tr></thead><tbody>
           <tr><td>① 法源确认</td><td>搭建法源登记册、归集公开法源、建立版本与生效状态比对工具</td><td>指定每国法源责任人，确认效力层级、语言版本与使用授权</td></tr>
           <tr><td>② 数据归集与语料工程</td><td>公开资源在线归集、OCR、清洗、结构恢复与打标管线（北大俄语系学生在此参与基础工序）</td><td>按授权提供去敏真实合同与仲裁文书，明确使用与删除边界</td></tr>
           <tr><td>③ 审查规则</td><td>把规则结构化为可测试的风险检查项，建立规则引擎与回归</td><td>顾问定义风险点、风险等级、法源依据与修改建议</td></tr>
@@ -252,27 +256,27 @@
           <tr><td>⑤ 训练与优化</td><td>分类器、重排、LoRA 实验与评测回归，保留对照组</td><td>提供误差专业判断，确认改进方向与不可接受错误</td></tr>
           <tr><td>⑥ 实案验收</td><td>搭建盲测环境、记录接受/修改/拒绝、做版本控制与上线限制</td><td>当地律师以真实案件盲测，逐项签字并出具验收意见</td></tr>
         </tbody></table></div>
-        <div class="grid g2" style="margin-top:5mm"><div class="card"><h3>研发团队线 · 贯穿六国</h3><p>同一支研发团队以统一管线服务六个国别：系统、双语引擎、数据管线、Agent、评测与盲测环境一次建设、六线复用；学生支持团队在数据与语言工序上扩充产能。</p></div><div class="card"><h3>合作方团队线 · 逐国把关</h3><p>合作方提供各国去敏样本、专业判断与上线签字，1 名俄语法律总负责人统一口径、各国顾问按需把关本国法域，是六线并进的专业质量闸门。</p></div></div>
+        <div class="grid g2" style="margin-top:5mm"><div class="card"><h3>研发团队职责 · 贯穿六国</h3><p>同一支研发团队以统一管线服务六个国别：系统、双语引擎、数据管线、Agent、评测与盲测环境一次建设、六国复用；学生支持团队在数据与语言工序上扩充产能。</p></div><div class="card"><h3>合作方职责 · 逐国把关</h3><p>合作方提供各国去敏样本、专业判断与上线签字；由 1 名俄语法律总负责人统一口径、各国顾问按需把关本国法域，构成各国别建设的专业质量把关环节。</p></div></div>
 
-        <div class="section-head"><div><h2>三、数据从哪里来：公开在线归集 + 合作方/专家提供（双轨）</h2></div><p>六国数据建构均按“能在线公开获取的尽量自动化归集，不能在线获取的由合作方与专家提供”分层。</p></div>
+        <div class="section-head"><div><h2>三、数据来源与归集方式：公开渠道归集与合作方提供并行</h2></div><p>六国数据建设按可获取方式分层：公开渠道可获取者通过系统化方式归集，非公开者由合作方与法律专家提供。</p></div>
         <div class="grid g2">
-          <div class="card"><h3>可通过公开网络资源系统化在线归集</h3><ul class="plain-list"><li><b>法律法规与官方公报：</b>各国官方立法门户、政府公报平台、司法部/议会官网发布的法规正文与修订记录，按主题与生效状态定向获取并自动比对版本。</li><li><b>司法与仲裁公开文书：</b>公开裁判文书库、仲裁机构公开裁决与示范条款，用于规则校验与典型案例积累。</li><li><b>术语与官方释义：</b>官方双语公报、权威法律词典与术语标准，作为术语库与中俄/中-本地语对齐的种子。</li><li><b>法源更新动态：</b>对官方发布渠道做定期巡检，自动发现新增、修订与废止，驱动法源登记册更新。</li></ul><p style="margin-top:3mm;font-size:10px;color:#68727d">说明：上述均为公开发布、面向自动化在线归集的内容；获取范围与频率以各官方渠道的使用条款为准，入库前由当地律师复核效力。</p></div>
-          <div class="card"><h3>需合作方与法律专家提供（无法在线获取）</h3><ul class="plain-list"><li><b>去敏真实合同与仲裁文书：</b>由合作律所/企业按授权提供并完成去敏，作为审查规则与金标的现实样本。</li><li><b>专业判断与审查规则：</b>风险点的认定、等级划分与修改建议依赖律师专业经验，不能由公开资料替代。</li><li><b>法源效力与语言版本确认：</b>官方文本的现行有效性、优先适用与本地语言版本须由当地顾问确认。</li><li><b>金标标注与分歧裁决：</b>金标评测集的标注、双专家分歧的裁决与上线签字。</li></ul></div>
+          <div class="card"><h3>公开渠道可系统化归集的内容</h3><ul class="plain-list"><li><b>法律法规与官方公报：</b>各国官方立法门户、政府公报平台、司法部/议会官网发布的法规正文与修订记录，按主题与生效状态定向获取并自动比对版本。</li><li><b>司法与仲裁公开文书：</b>公开裁判文书库、仲裁机构公开裁决与示范条款，用于规则校验与典型案例积累。</li><li><b>术语与官方释义：</b>官方双语公报、权威法律词典与术语标准，作为术语库及中俄、中—本地语对齐的基础。</li><li><b>法源更新动态：</b>对官方发布渠道做定期巡检，自动发现新增、修订与废止，驱动法源登记册更新。</li></ul><p style="margin-top:3mm;font-size:10px;color:#68727d">说明：上述均为公开发布、面向自动化在线归集的内容；获取范围与频率以各官方渠道的使用条款为准，入库前由当地律师复核效力。</p></div>
+          <div class="card"><h3>须由合作方与法律专家提供的内容</h3><ul class="plain-list"><li><b>去敏真实合同与仲裁文书：</b>由合作律所/企业按授权提供并完成去敏，作为审查规则与金标的现实样本。</li><li><b>专业判断与审查规则：</b>风险点的认定、等级划分与修改建议依赖律师专业经验，不能由公开资料替代。</li><li><b>法源效力与语言版本确认：</b>官方文本的现行有效性、优先适用与本地语言版本须由当地顾问确认。</li><li><b>金标标注与分歧裁决：</b>金标评测集的标注、双专家分歧的裁决与上线签字。</li></ul></div>
         </div>
 
-        <div class="section-head"><div><h2>四、法律专家配置与协作机制：不是六国各招一队，而是“一总负责 + 各国按需 + 北大俄语系支持”</h2></div></div>
+        <div class="section-head"><div><h2>四、法律专家配置与协作机制：总负责统筹、各国按需、北大俄语系协同</h2></div></div>
         <div class="grid g3">
-          <div class="card"><span class="tag agent">第 1 层</span><h3>俄语法律总负责人（1 名 · 全程）</h3><p>统一六国的审查方法论、术语标准与金标口径；制定俄罗斯标杆规则库作为各国模板；协调各国顾问、签署跨国一致性结论与版本上线。是六线并行的“同一把尺子”。</p></div>
+          <div class="card"><span class="tag agent">第 1 层</span><h3>俄语法律总负责人（1 名 · 全程）</h3><p>统一六国的审查方法论、术语标准与金标口径；制定俄罗斯标杆规则库作为各国模板；协调各国顾问、签署跨国一致性结论与版本上线，确保六国建设标准统一。</p></div>
           <div class="card"><span class="tag data">第 2 层</span><h3>各国当地法律顾问（每国 1 名 · 按需/兼职）</h3><p>无需为每国常设全职团队。每国配 1 名顾问，负责本国法源效力确认、审查规则专业校准、金标分歧裁决与上线签字。俄语为六国通用工作语言，多数顾问可用俄语协作，本地语言版本由其把关，按工时投入。</p></div>
           <div class="card"><span class="tag agent">第 3 层</span><h3>北大俄语系在读学生支持团队（合作机制已搭建）</h3><p>已落地的校企合作机制，承担语言密集、规则化的基础工序，使专家精力集中于专业判断，是六国同步推进的产能保障。</p></div>
         </div>
-        <div class="card section"><h3>北大俄语系学生如何配合我们的工作</h3><div class="grid g2"><ul class="plain-list"><li>公开法源、公报与裁决的归集、整理与登记建册。</li><li>OCR 结果校对、版面与条款结构复核。</li><li>俄语—中文术语对齐、术语库扩充与一致性检查。</li></ul><ul class="plain-list"><li>俄文译文初校与中俄段落对齐。</li><li>首轮语料标注、去敏初筛与质量自检。</li><li>按周向法律专家提交待复核批次。</li></ul></div><p style="margin-top:3mm"><strong>底线：</strong>学生产出只作语言与数据层面的基础工作，<strong>一律不对法律效力与风险结论作判断</strong>；所有批次须经当地顾问或总负责人复核签字后方可入库或用于训练，并保留可追溯的责任记录。</p></div>
+        <div class="card section"><h3>北大俄语系学生支持工作范围</h3><div class="grid g2"><ul class="plain-list"><li>公开法源、公报与裁决的归集、整理与登记建册。</li><li>OCR 结果校对、版面与条款结构复核。</li><li>俄语—中文术语对齐、术语库扩充与一致性检查。</li></ul><ul class="plain-list"><li>俄文译文初校与中俄段落对齐。</li><li>首轮语料标注、去敏初筛与质量自检。</li><li>按周向法律专家提交待复核批次。</li></ul></div><p style="margin-top:3mm"><strong>基本原则：</strong>学生产出仅限语言与数据层面的基础工作，<strong>一律不对法律效力与风险结论作出判断</strong>；所有批次须经当地顾问或总负责人复核签字后，方可入库或用于训练，并保留可追溯的责任记录。</p></div>
 
         <div class="callout warn section"><strong>法源注意：</strong>各国官方入口、公开内容的获取授权、文本效力以及俄文/本地语言版本均须由当地律师在入库前复核；本页所标注的国别、语言、工作包与协作机制是研发与组织规划，不构成任何国家的法律意见。</div>
       </section>
 
       <section class="page" id="commercial">
-        <p class="eyebrow">第六章</p><h1>商业模式与合作机制</h1><p class="lead">商业化遵循“实案验证—方法标准化—分项计费”三步走。先用一线真实案件打磨并验证系统的处理效率、法律专业度和溯源严密性，再把跑通的交付流程沉淀为标准规范。在收费上，我们主张把软件订阅、按量调用、私有化部署和资深法律专家咨询分开、差异化定价，从而厘清“技术软件服务”与“专业法律咨询服务”之间的边界和权责。</p>
+        <p class="eyebrow">第六章</p><h1>商业模式与合作机制</h1><p class="lead">商业化遵循“实案验证—方法标准化—分项计费”的路径：先以一线真实案件打磨并验证系统的处理效率、法律专业度与溯源严密性，再将验证成熟的交付流程沉淀为标准规范。在收费层面，本项目主张将软件订阅、按量调用、私有化部署与资深法律专家咨询分项独立、差异化定价，从而厘清“技术软件服务”与“专业法律咨询服务”之间的边界与权责。</p>
         <div class="grid g4">
           <div class="card"><h3>订阅</h3><p>按组织规模、席位、各个支持的国别包与功能模块收取年度订阅费。</p></div>
           <div class="card"><h3>按量</h3><p>合同页数、审查份数、Token、OCR/ASR、外部数据查询按量计费。</p></div>
@@ -322,7 +326,7 @@
         <div class="section-head"><div><h2>算力口径：默认 API 调用，另给一套“GPU 租用”口径</h2></div><p>除按调用量付费的云端模型 API 外，对后训练、微调与私有化压测另提供一套租用算力的成本口径，二者按月度实际需要择一或并用。</p></div>
         <div class="grid g2">
           <div class="card"><span class="tag agent">方案 A · 默认</span><h3>云端模型 API + 云服务（按量）</h3><p>推理、评测与解析通过云端模型接口按调用量付费，已含在上表“模型接口与 AI 工具”“云服务、数据库与安全监控”中，无需预置固定算力，随用量弹性伸缩。</p></div>
-          <div class="card"><span class="tag data">方案 B · 可选</span><h3>GPU 算力租用（后训练 / 微调 / 私有化）</h3><p>启动 SFT、DPO、LoRA 等后训练实验或私有化压测的月份，按卡时弹性租用 GPU 算力，约 <strong>3–9 万元 / 月</strong>；不训练的月份不发生。相较自购设备（数十万元/卡）更适配本项目“按需租用、用多少付多少”的节奏。</p></div>
+          <div class="card"><span class="tag data">方案 B · 可选</span><h3>GPU 算力租用（后训练 / 微调 / 私有化）</h3><p>启动 SFT、DPO、LoRA 等后训练实验或私有化压测的月份，按卡时弹性租用 GPU 算力，约 <strong>3–9 万元 / 月</strong>；不训练的月份不发生。相较自购设备（数十万元/卡），更契合本项目按需租用、按量计费的成本节奏。</p></div>
         </div>
         <div class="table-wrap"><table><thead><tr><th>算力项</th><th class="num">租用预算</th><th>用途</th><th>决策门</th></tr></thead><tbody>
           <tr><td>GPU 卡时租用（弹性）</td><td class="num">3.0–9.0 / 月</td><td>后训练、微调、批量评测与私有化压测，按卡时计费</td><td>仅在启动训练实验或私有化交付的月份发生，凭实验记录核销</td></tr>
@@ -331,9 +335,10 @@
       </section>
 
       <div id="month-pages"></div>
+      <!-- 注：以下两个库用于"导出为 PDF"直接下载；首次导出需联网加载，离线时自动回退到浏览器打印另存。 -->
 
       <section class="page" id="governance">
-        <p class="eyebrow">第九章</p><h1>质量控制、风险管理与项目治理</h1><p class="lead">在项目治理和里程碑管理上，我们不以功能数量论英雄。每个关键阶段的评审和验收，都要综合考量五项核心指标：法律服务的专业质量、中俄双语输出的严谨一致、一线用户的实际使用体验、系统的数据安全合规与审计能力，以及最终在市场上的商业转化成效。</p>
+        <p class="eyebrow">第九章</p><h1>质量控制、风险管理与项目治理</h1><p class="lead">在项目治理与里程碑管理上，项目不以功能数量作为单一考核标准。每个关键阶段的评审与验收，均须综合考量五项核心指标：法律服务的专业质量、中俄双语输出的严谨一致、一线用户的实际使用体验、系统的数据安全合规与审计能力，以及最终的市场商业转化成效。</p>
         <div class="table-wrap"><table><thead><tr><th>指标组</th><th>核心指标</th><th>阶段门槛</th><th>责任人</th></tr></thead><tbody>
           <tr><td>法律质量</td><td>风险召回、误报、引用正确率、专家接受率</td><td>9 月核心风险召回 &gt;85%，高风险错误零容忍</td><td>Agent 负责人 + 法律专家</td></tr>
           <tr><td>双语质量</td><td>术语一致、实体/数字一致、律师修订距离</td><td>关键实体 100% 一致；高风险内容人工确认</td><td>双语 Agent + 俄语专家</td></tr>
@@ -352,7 +357,7 @@
       </section>
 
       <section class="page" id="support">
-        <p class="eyebrow">第十章</p><h1>实施保障与合作条件</h1><p class="lead">为保证项目高标准稳步落地，实施阶段采用产品规划、软件开发、AI 引擎打磨、法律顾问介入和种子客户试用并行推进的协同机制。在此机制下，合作方需要深度参与，并就专家投入工时、高质量的清洗数据和匹配的种子客户资源给出明确排期和可量化的验收标准。双方合力，确保这一为期六个月的实施计划稳步推进、按期见效。</p>
+        <p class="eyebrow">第十章</p><h1>实施保障与合作条件</h1><p class="lead">为保证项目高标准稳步落地，实施阶段采用产品规划、软件开发、AI 引擎研发、法律顾问介入与种子客户试用并行推进的协同机制。在此机制下，合作方须深度参与，并就专家投入工时、高质量清洗数据与匹配的种子客户资源，给出明确排期与可量化的验收标准。双方协同发力，确保为期六个月的实施计划稳步推进、如期见效。</p>
         <div class="grid g2">
           <div class="card"><h3>数据与授权</h3><ul class="checklist"><li>按国别提供可合法用于研发的去敏合同、仲裁文书与审查意见。</li><li>明确数据使用、保存、训练、删除、对外展示与案例引用边界。</li><li>指定每国法源与更新责任人，确认语言版本与效力。</li></ul></div>
           <div class="card"><h3>专家与验收</h3><ul class="checklist"><li>1 名俄语法律总负责人（全程），每国 1 名当地顾问按需参与。</li><li>北大俄语系在读学生支持团队承担归集、校对、术语对齐与标注，专家复核后入库。</li><li>每周固定评审时段，完成金标、难例和版本签字。</li><li>论坛对外案例必须获得客户和专家书面授权。</li></ul></div>
@@ -373,6 +378,8 @@
   </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
 <script>
 const months=[
  {id:'2026-07',num:'8.1',name:'7 月',phase:'演示版本整理与团队组建',goal:'完成工程基础、团队到位和真实数据联调，形成稳定主分支、演示分支及可供内部验收的 Demo v0.6。',budget:'30–45 万元',known:'30–45',countries:'俄罗斯主线；六国数据规范准备',budgetFocus:'团队到位、工程基础和真实数据联调',
@@ -477,13 +484,50 @@ document.addEventListener('click',e=>{
  const go=e.target.closest('[data-go]');if(go){activate(go.dataset.go);return}
 });
 document.querySelector('#menu').addEventListener('click',()=>document.querySelector('#rail').classList.toggle('open'));
-function exportPDF(){
- const btn=document.querySelector('#export-pdf');const label=btn?btn.textContent:'';
- if(btn){btn.textContent='正在生成…';btn.disabled=true;}
- document.body.classList.add('exporting');
- const restore=()=>{document.body.classList.remove('exporting');if(btn){btn.textContent=label;btn.disabled=false;}};
- window.addEventListener('afterprint',restore,{once:true});
- setTimeout(()=>{try{window.print();}finally{setTimeout(restore,1500);}},60);
+const PDF_NAME='通律智能-中俄双语智能法律协作系统-合作计划书.pdf';
+function addImagePaged(pdf,canvas,isFirst){
+ const PW=210,PH=297,scaleMM=PW/canvas.width;       // 画布像素 → A4 毫米
+ const fullH=canvas.height*scaleMM;
+ if(fullH<=PH+1){                                    // 一页放得下，整页贴入
+  if(!isFirst) pdf.addPage();
+  pdf.addImage(canvas.toDataURL('image/jpeg',0.96),'JPEG',0,0,PW,fullH);
+  return;
+ }
+ const sliceMaxPx=Math.floor(canvas.width*PH/PW);    // 单张 A4 对应的画布像素高度
+ let y=0,slice=0;
+ while(y<canvas.height){
+  const h=Math.min(sliceMaxPx,canvas.height-y);
+  const c=document.createElement('canvas');c.width=canvas.width;c.height=h;
+  const ctx=c.getContext('2d');ctx.fillStyle='#ffffff';ctx.fillRect(0,0,c.width,c.height);
+  ctx.drawImage(canvas,0,y,canvas.width,h,0,0,canvas.width,h);
+  if(!(isFirst&&slice===0)) pdf.addPage();
+  pdf.addImage(c.toDataURL('image/jpeg',0.96),'JPEG',0,0,PW,h*scaleMM);
+  y+=h;slice++;
+ }
+}
+async function exportPDF(){
+ const btn=document.querySelector('#export-pdf');const label=btn.textContent;
+ const hasLib=window.html2canvas&&window.jspdf&&window.jspdf.jsPDF;
+ if(!hasLib){                                        // 库未加载（离线等）→ 回退到浏览器打印另存
+  btn.textContent='调用打印…';document.body.classList.add('exporting');
+  window.addEventListener('afterprint',()=>{document.body.classList.remove('exporting');btn.textContent=label;},{once:true});
+  setTimeout(()=>window.print(),60);return;
+ }
+ btn.disabled=true;document.body.classList.add('exporting');
+ const pages=[...document.querySelectorAll('main .page')];
+ try{
+  const {jsPDF}=window.jspdf;const pdf=new jsPDF('p','mm','a4');
+  for(let i=0;i<pages.length;i++){
+   btn.textContent=`生成中 ${i+1}/${pages.length}`;
+   const canvas=await html2canvas(pages[i],{scale:2,useCORS:true,backgroundColor:'#ffffff',windowWidth:794});
+   addImagePaged(pdf,canvas,i===0);
+  }
+  pdf.save(PDF_NAME);
+ }catch(e){
+  console.error(e);alert('PDF 生成失败，已改用浏览器打印另存。');window.print();
+ }finally{
+  document.body.classList.remove('exporting');btn.disabled=false;btn.textContent=label;
+ }
 }
 document.querySelector('#export-pdf').addEventListener('click',exportPDF);
 window.addEventListener('hashchange',()=>{activate(location.hash.slice(1)||'overview',false)});
