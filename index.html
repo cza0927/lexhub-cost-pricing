@@ -65,7 +65,7 @@
     body.exporting .content{padding:0}
     body.exporting .page{display:block!important;width:210mm;min-height:auto;margin:0 auto;box-shadow:none}
     body.exporting .card,body.exporting .table-wrap,body.exporting .flow-step,body.exporting .week{break-inside:avoid}
-    @media print{body{background:#fff}.rail,.mobile-head,.tabs{display:none!important}.app{display:block}.content{padding:0}.page,.page.on{display:block!important;width:210mm;min-height:297mm;margin:0;padding:17mm 17mm 19mm 21mm;box-shadow:none;break-after:page;page-break-after:always}.tab-panel{display:block!important}.card,.table-wrap,.flow-step,.week{break-inside:avoid}.roadmap{overflow:visible}.running-head{margin-bottom:12mm}}
+    @media print{body{background:#fff}.rail,.mobile-head,.tabs{display:none!important}.app{display:block}.content{padding:0}.page,.page.on{display:block!important;width:210mm;min-height:297mm;margin:0;padding:17mm 17mm 19mm 21mm;box-shadow:none;break-after:page;page-break-after:always}.tab-panel{display:block!important}.card,.table-wrap,.flow-step,.week,tr,svg,.kpi,.road-card{break-inside:avoid;page-break-inside:avoid}h1,h2,h3,h4{break-after:avoid;page-break-after:avoid}p,li{orphans:3;widows:3}.roadmap{overflow:visible}.running-head{margin-bottom:12mm}}
   </style>
 </head>
 <body>
@@ -118,7 +118,7 @@
           <tr><th>专业路线</th><td>俄罗斯及中亚五国分别建立法源、术语、合同风险规则、训练语料、权威验收样本集和 Agent系统版本，不以一套通用结论覆盖不同法域。</td></tr>
           <tr><th>落地路径</th><td>共建合作方参与验证 → 3—5 家种子律所真实案件试用 → 北京论坛发布 → 规模化接入与私有化交付。</td></tr>
           <tr><th>团队配置</th><td>约 16 人核心研发与职能团队，含算法研究员、法律数据端总负责人、法务与行政岗位，并按需配置俄语及六国法律专家；产品负责人已到位，软件研发与 Agent系统研发统一纳入月度计划。</td></tr>
-          <tr><th>预算方案</th><td>六个月总预算为 330—497 万元，覆盖研发人力、算法与法律数据、模型与云资源、法律数据、行政与法务、测试运维及一次性投入。</td></tr>
+          <tr><th>预算方案</th><td>六个月总预算为 332—506 万元，覆盖研发人力、算法与法律数据、模型与云资源、法律数据、行政与法务、测试运维及一次性投入。</td></tr>
         </tbody></table></div>
         <div class="grid g4 section">
           <div class="card kpi"><div class="value">双语</div><div class="label">中文与俄文两套完整工作视图</div></div>
@@ -229,7 +229,7 @@
 
         <div class="section-head"><div><h2>三、数据来源与归集方式：公开渠道归集与合作方提供并行</h2></div><p>六国数据建设按可获取方式分层：公开渠道可获取者通过系统化方式归集，非公开者由合作方与法律专家提供。</p></div>
         <div class="grid g2">
-          <div class="card"><h3>公开渠道可系统化归集的内容</h3><ul class="plain-list"><li><b>法律法规与官方公报：</b>各国官方立法门户、政府公报平台、司法部/议会官网发布的法规正文与修订记录，按主题与生效状态定向获取并自动比对版本。</li><li><b>司法与仲裁公开文书：</b>公开裁判文书库、仲裁机构公开裁决与示范条款，用于规则校验与典型案例积累。</li><li><b>术语与官方释义：</b>官方双语公报、权威法律词典与术语标准，作为术语库及中俄、中—本地语对齐的基础。</li><li><b>法源更新动态：</b>对官方发布渠道做定期巡检，自动发现新增、修订与废止，驱动法源登记册更新。</li></ul><p style="margin-top:3mm;font-size:10px;color:#68727d">说明：上述均为公开发布、面向自动化在线归集的内容；获取范围与频率以各官方渠道的使用条款为准，入库前由当地律师复核效力。</p></div>
+          <div class="card"><h3>公开渠道可系统化归集的内容</h3><ul class="plain-list"><li><b>法律法规与官方公报：</b>各国官方立法门户、政府公报平台、司法部/议会官网发布的法规正文与修订记录，按主题与生效状态定向获取并自动比对版本。</li><li><b>司法与仲裁公开文书：</b>公开裁判文书库、仲裁机构公开裁决与示范条款，用于规则校验与典型案例积累。</li><li><b>术语与官方释义：</b>官方双语公报、权威法律词典与术语标准，作为术语库及中俄、中—本地语对齐的基础。</li><li><b>法源更新动态：</b>对官方发布渠道做定期巡检，自动发现新增、修订与废止，驱动法源登记册更新。</li></ul></div>
           <div class="card"><h3>须由合作方与法律专家提供的内容</h3><ul class="plain-list"><li><b>去敏真实合同与仲裁文书：</b>由合作律所/企业按授权提供并完成去敏，作为审查规则与权威验收样本的现实样本。</li><li><b>专业判断与审查规则：</b>风险点的认定、等级划分与修改建议依赖律师专业经验，不能由公开资料替代。</li><li><b>法源效力与语言版本确认：</b>官方文本的现行有效性、优先适用与本地语言版本须由当地顾问确认。</li><li><b>权威验收样本标注与分歧裁决：</b>权威验收样本集的标注、双专家分歧的裁决与上线签字。</li></ul></div>
         </div>
 
@@ -240,13 +240,13 @@
         <p class="eyebrow">第五章</p><h1>投资预算与成本方案</h1><p class="lead">本预算覆盖软件研发、Agent系统研发、俄语与法律专业支持、模型与云资源、法律数据、测试运维及一次性投入，所有费用按月度交付物和验收结果分阶段拨付。</p>
         <div class="grid g4">
           <div class="card kpi"><div class="value">约 16 人</div><div class="label">核心与职能团队</div><div class="note">另按需配置俄语及六国法律专家</div></div>
-          <div class="card kpi"><div class="value">145.2–254.4 万</div><div class="label">六个月人员成本</div><div class="note">含研发、算法、数据、测试、运维、设计、法务、行政与专家支持</div></div>
+          <div class="card kpi"><div class="value">163.2–284.4 万</div><div class="label">六个月人员成本</div><div class="note">含研发、算法、数据、测试、运维、设计、法务、行政与专家支持</div></div>
           <div class="card kpi"><div class="value">18–34 万</div><div class="label">一次性投入</div><div class="note">设备、测试环境、样本与合规建设</div></div>
-          <div class="card kpi"><div class="value">330–497 万</div><div class="label">六个月完整预算</div><div class="note">含新增算法、数据、法务与行政岗位</div></div>
+          <div class="card kpi"><div class="value">332–506 万</div><div class="label">六个月完整预算</div><div class="note">含新增算法、数据、法务与行政岗位</div></div>
         </div>
         <div class="section-head"><div><h2>团队配置与六个月人员预算（单位：万元）</h2></div></div>
         <div class="table-wrap"><table><thead><tr><th>岗位</th><th>配置</th><th class="num">月度成本</th><th class="num">六个月预算</th></tr></thead><tbody>
-          <tr><td>产品负责人</td><td>1 人，创始人兼任</td><td class="num">0</td><td class="num">0</td></tr>
+          <tr><td>产品负责人</td><td>1 人</td><td class="num">3.0–5.0</td><td class="num">18.0–30.0</td></tr>
           <tr><td>UI/UX 设计</td><td>1 人</td><td class="num">1.0–1.8</td><td class="num">6.0–10.8</td></tr>
           <tr><td>前端开发</td><td>2 人</td><td class="num">1.5–2.4 / 人</td><td class="num">18.0–28.8</td></tr>
           <tr><td>后端开发</td><td>2 人</td><td class="num">1.8–2.8 / 人</td><td class="num">21.6–33.6</td></tr>
@@ -277,7 +277,51 @@
         <div class="table-wrap"><table><thead><tr><th>算力项</th><th class="num">租用预算</th><th>用途</th><th>决策门</th></tr></thead><tbody>
           <tr><td>算力租用（弹性，按使用时长）</td><td class="num">3.0–9.0 / 月</td><td>模型优化训练、批量评测与私有化压力测试，按使用时长计费</td><td>仅在启动模型优化训练或私有化交付的月份发生，凭实验记录核销</td></tr>
         </tbody></table></div>
-        <div class="callout section"><strong>总体测算：</strong>7—9 月月度运营预算 113—165 万元、一次性投入 12—24 万元；10—12 月月度运营预算 153—222 万元、一次性投入 6—10 万元。上述按月运营与一次性投入合计 284—421 万元；叠加新增算法研究员、法律数据端总负责人、法务与行政岗位的人员成本约 46—76 万元后，六个月完整预算约 330—497 万元（默认按调用付费方案，如按月启用算力租用，则在对应月份另增约 3—9 万元/月）。</div>
+        <div class="callout section"><strong>总体测算：</strong>成本按三阶段特征分布，呈“研发期集中投入见顶—试用期结构转换回落—落地期单位成本下降”的收敛曲线。研发期（7—9 月）172—254 万元，以固定研发投入为主、9 月达投入峰值；客户试用期（10—11 月）110—172 万元，固定投入占比由约 62% 降至约 50%，客户、专家与试用环境等可变投入上升，11 月发布形成阶段性短峰后回落；规模落地期（12 月）50—80 万元，一次性投入归零、按单位合同与客户成本核算，单位成本较试用期下降。六个月完整预算约 332—506 万元（默认按调用付费方案，如按月启用算力租用，则在对应月份另增约 3—9 万元/月）。</div>
+        <div class="section-head"><div><h2>成本变化曲线：月度与阶段</h2></div></div>
+        <div class="card">
+          <svg viewBox="0 0 760 340" width="100%" style="display:block;font-family:inherit" role="img" aria-label="月度与阶段成本变化曲线">
+            <rect x="46" y="58" width="347" height="228" fill="#e9eef3"/>
+            <rect x="393" y="58" width="231.3" height="228" fill="#f5f1ea"/>
+            <rect x="624.3" y="58" width="115.7" height="228" fill="#f6edee"/>
+            <line x1="46" y1="58" x2="740" y2="58" stroke="#c9cfd6" stroke-width="0.6" stroke-dasharray="2 2"/><text x="38" y="61" text-anchor="end" font-size="9" fill="#929ba5">120</text>
+            <line x1="46" y1="115" x2="740" y2="115" stroke="#c9cfd6" stroke-width="0.6" stroke-dasharray="2 2"/><text x="38" y="118" text-anchor="end" font-size="9" fill="#929ba5">100</text>
+            <line x1="46" y1="172" x2="740" y2="172" stroke="#c9cfd6" stroke-width="0.6" stroke-dasharray="2 2"/><text x="38" y="175" text-anchor="end" font-size="9" fill="#929ba5">80</text>
+            <line x1="46" y1="229" x2="740" y2="229" stroke="#c9cfd6" stroke-width="0.6" stroke-dasharray="2 2"/><text x="38" y="232" text-anchor="end" font-size="9" fill="#929ba5">60</text>
+            <line x1="46" y1="286" x2="740" y2="286" stroke="#929ba5" stroke-width="0.8"/><text x="38" y="289" text-anchor="end" font-size="9" fill="#929ba5">40</text>
+            <text x="18" y="54" font-size="9" fill="#606974">万元</text>
+            <line x1="393" y1="58" x2="393" y2="286" stroke="#929ba5" stroke-width="0.6" stroke-dasharray="3 2"/>
+            <line x1="624.3" y1="58" x2="624.3" y2="286" stroke="#929ba5" stroke-width="0.6" stroke-dasharray="3 2"/>
+            <text x="219.5" y="50" text-anchor="middle" font-size="10" font-weight="600" fill="#1e3c5b">研发期</text>
+            <text x="508.65" y="50" text-anchor="middle" font-size="10" font-weight="600" fill="#1e3c5b">客户试用期</text>
+            <text x="682.15" y="50" text-anchor="middle" font-size="10" font-weight="600" fill="#1e3c5b">规模落地期</text>
+            <path d="M103.8,189.1 L219.5,154.9 L335.2,132.1 L450.8,166.3 L566.5,143.5 L682.2,172.0 L682.2,257.5 L566.5,243.3 L450.8,243.3 L335.2,217.6 L219.5,234.7 L103.8,257.5 Z" fill="#1e3c5b" fill-opacity="0.13"/>
+            <polyline points="103.8,189.1 219.5,154.9 335.2,132.1 450.8,166.3 566.5,143.5 682.2,172.0" fill="none" stroke="#3a5b79" stroke-width="1"/>
+            <polyline points="103.8,257.5 219.5,234.7 335.2,217.6 450.8,243.3 566.5,243.3 682.2,257.5" fill="none" stroke="#3a5b79" stroke-width="1" stroke-opacity="0.55"/>
+            <polyline points="103.8,223.3 219.5,194.8 335.2,174.9 450.8,204.8 566.5,193.4 682.2,214.8" fill="none" stroke="#1e3c5b" stroke-width="2.4"/>
+            <circle cx="103.8" cy="223.3" r="2.6" fill="#1e3c5b"/>
+            <circle cx="219.5" cy="194.8" r="2.6" fill="#1e3c5b"/>
+            <circle cx="335.2" cy="174.9" r="3.6" fill="#87343a"/>
+            <circle cx="450.8" cy="204.8" r="2.6" fill="#1e3c5b"/>
+            <circle cx="566.5" cy="193.4" r="3.6" fill="#87343a"/>
+            <circle cx="682.2" cy="214.8" r="2.6" fill="#1e3c5b"/>
+            <text x="335.2" y="165" text-anchor="middle" font-size="9" fill="#87343a">研发峰</text>
+            <text x="566.5" y="183" text-anchor="middle" font-size="9" fill="#87343a">发布峰</text>
+            <text x="103.8" y="302" text-anchor="middle" font-size="10" fill="#33414d">7 月</text><text x="103.8" y="315" text-anchor="middle" font-size="9" fill="#8b96a1">50–74</text>
+            <text x="219.5" y="302" text-anchor="middle" font-size="10" fill="#33414d">8 月</text><text x="219.5" y="315" text-anchor="middle" font-size="9" fill="#8b96a1">58–86</text>
+            <text x="335.2" y="302" text-anchor="middle" font-size="10" fill="#33414d">9 月</text><text x="335.2" y="315" text-anchor="middle" font-size="9" fill="#8b96a1">64–94</text>
+            <text x="450.8" y="302" text-anchor="middle" font-size="10" fill="#33414d">10 月</text><text x="450.8" y="315" text-anchor="middle" font-size="9" fill="#8b96a1">55–82</text>
+            <text x="566.5" y="302" text-anchor="middle" font-size="10" fill="#33414d">11 月</text><text x="566.5" y="315" text-anchor="middle" font-size="9" fill="#8b96a1">55–90</text>
+            <text x="682.2" y="302" text-anchor="middle" font-size="10" fill="#33414d">12 月</text><text x="682.2" y="315" text-anchor="middle" font-size="9" fill="#8b96a1">50–80</text>
+          </svg>
+          <div style="display:flex;gap:6mm;flex-wrap:wrap;margin-top:3mm;font-size:10px;color:#606974">
+            <span><b style="color:#1e3c5b">研发期 7—9 月</b>　172—254 万</span>
+            <span><b style="color:#1e3c5b">客户试用期 10—11 月</b>　110—172 万</span>
+            <span><b style="color:#1e3c5b">规模落地期 12 月</b>　50—80 万</span>
+            <span style="margin-left:auto"><b>六个月合计 332—506 万元</b></span>
+          </div>
+          <div style="margin-top:1.5mm;font-size:9.5px;color:#8b96a1">阴影带为各月成本区间（最小—最大），实线为中位走势，<span style="color:#87343a">●</span> 为阶段成本峰值（9 月研发峰、11 月发布峰）。</div>
+        </div>
       </section>
 
       <div id="month-pages"></div>
@@ -328,48 +372,48 @@
 <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
 <script>
 const months=[
- {id:'2026-07',num:'6.1',name:'7 月',phase:'演示版本整理与团队组建',goal:'完成工程基础、团队到位和真实数据联合调试，形成稳定主版本、演示版本及可供内部验收的演示版 v0.6。',budget:'30–45 万元',known:'30–45',countries:'俄罗斯主线；六国数据规范准备',budgetFocus:'团队到位、工程基础和真实数据联合调试',
+ {id:'2026-07',num:'6.1',name:'7 月',phase:'演示版本整理与团队组建',goal:'完成工程基础、团队到位和真实数据联合调试，形成稳定主版本、演示版本及可供内部验收的演示版 v0.6。',budget:'50–74 万元',known:'50–74',countries:'俄罗斯主线；六国数据规范准备',budgetFocus:'团队到位、工程基础和真实数据联合调试',
  metrics:[['研发团队','约 16 人核心配置'],['版本交付','内部演示版 v0.6'],['运行环境','主版本 + 演示版本'],['试用准备','1 个稳定真实账号']],
  weeks:[['第 1 周','团队到位与工程规范',['确认 UI/UX、前端、后端、实习生、测试和运维配置','完善代码仓库分支、提交审核、代码评审和测试流程','形成新人环境搭建、代码结构、接口和发布说明','明确产品、软件研发、Agent系统与法律专家的协作边界']],['第 2 周','现有演示功能整理',['将工作台、业务、邮件、日历和合同审查能力并入主版本','演示版本只保留线上展示所需的稳定功能','梳理登录、文件、工具箱和各模块之间的数据关系','补齐中文与俄文界面文案及基础状态反馈']],['第 3 周','真实账号与业务数据联合调试',['移除本地模拟账号切换，接入真实账号、密码和后端接口','填充客户、案件、合同、文件、邮件、日历、审查任务和通知数据','建立文件解析、模型调用、任务状态和审计记录的基础流程','准备俄罗斯法源、合同样本和双语术语的授权清单']],['第 4 周','内部验收与八月排期',['完成主版本、演示版本和试用账号的稳定性验收','用真实样本验证俄语合同上传、解析和基础双语处理','发布演示版 v0.6、新人文档、已知问题和回退说明','确定八月合同审查完整流程、人员投入和测试范围']],
  ],
  agents:[['工程基础','分支、评审、测试、发布与新人文档','稳定主版本和演示版本','提交审核与回退流程可执行'],['业务数据流程','真实账号及客户、案件、文件等数据','可持续使用的试用环境','不依赖本地模拟数据'],['Agent系统基础流程','解析、模型调用、事件和证据记录','可重复运行的最小流程','输入、输出、版本和日志齐全'],['法律数据准备','俄罗斯样本、法源、术语和授权','首批数据登记册','来源、用途和有效性可追溯']],
  gates:['演示版 v0.6 可稳定运行','主版本与演示版本职责清晰','至少 1 个真实试用账号可用','八月范围、人员与样本已经确认'],
- budgetRows:[['研发人员','固定','16–24','设计、前端、后端、测试、运维及 Agent系统人员'],['云服务、模型与存储','可变','6–9','开发、测试、演示和基础模型调用'],['工具与一次性设备','一次性','5–8','研发工具、终端及必要测试设备'],['法律样本与项目预留','可变','3–4','俄语法律样本、整理与风险缓冲']]},
- {id:'2026-08',num:'6.2',name:'8 月',phase:'合同审查完整流程建设',goal:'打通俄语合同上传、解析、审查、双语报告和原文定位的完整流程，并建立俄罗斯法律知识库与常用法律工具。',budget:'38–55 万元',known:'38–55',countries:'俄罗斯核心能力；哈萨克斯坦数据准备',budgetFocus:'合同审查、文字识别、双语报告和知识库',
+ budgetRows:[['研发与职能人员','固定','31–46','设计、前端、后端、测试、运维、Agent系统及产品、算法、法律数据、法务、行政'],['模型、云服务与法律样本','可变','12–18','开发测试环境、基础模型调用与俄语法律样本'],['设备与环境一次性投入','一次性','7–10','研发终端、测试设备与工程环境搭建']]},
+ {id:'2026-08',num:'6.2',name:'8 月',phase:'合同审查完整流程建设',goal:'打通俄语合同上传、解析、审查、双语报告和原文定位的完整流程，并建立俄罗斯法律知识库与常用法律工具。',budget:'58–86 万元',known:'58–86',countries:'俄罗斯核心能力；哈萨克斯坦数据准备',budgetFocus:'合同审查、文字识别、双语报告和知识库',
  metrics:[['文档解析','准确率 >85%'],['风险能力','核心覆盖 75%–80%'],['报告交付','中文详版 + 俄文摘要'],['知识基础','俄罗斯法源可检索']],
  weeks:[['第 1 周','文档接收与解析',['支持 DOCX、PDF 和扫描件上传，接入文字识别与排版还原','保留页码、段落、条款和原文位置，支持结果定位到原文','合同进入客户、案件、文件和任务体系并完成归档','建立解析失败、加密文件和低质量扫描件的友好提示']],['第 2 周','合同风险识别与分级',['识别主体、期限、金额、准据法、争议解决和关键义务','建立高、中、低风险等级、结论和修改建议结构','把俄罗斯合同审查规则拆成可测试的风险检查项','为无依据、低置信和跨法域问题设置存疑不答与人工复核']],['第 3 周','双语报告与法律工具',['输出供中国律师使用的完整中文报告和供俄语客户使用的俄文摘要','确保风险结论、证据、数字、主体与条款编号双语一致','建设催款函取证、合同风险摘要、主体摘要和期限跟踪工具','支持报告导出、版本比较和律师修订留痕']],['第 4 周','知识库与版本验收',['整理俄罗斯法规、合同、风险清单和法律术语','建立法源效力、语言版本、更新时间和授权记录','完成解析、检索、审查、翻译、报告和原文定位的全流程稳定性测试','发布合同审查内测版及已知限制说明']],
  ],
  agents:[['文档解析','多格式文件、文字识别与原文定位','结构化条款和位置索引','解析准确率 >85%'],['合同审查','风险识别、分级、依据和建议','结构化风险清单','核心风险覆盖 75%–80%'],['双语报告','中文详版与俄文摘要','可导出的双语报告','实体、数字和证据一致'],['俄罗斯知识库','法源、合同、术语和风险清单','可检索、可更新的知识库','来源和效力状态清晰']],
  gates:['完整合同审查流程可重复运行','解析准确率达到 85% 以上','核心风险覆盖达到 75%–80%','双语报告可回到原文位置'],
- budgetRows:[['研发人员','固定','24–34','软件、Agent系统、测试与运维持续投入'],['模型、文字识别与云服务','可变','9–14','解析、翻译、审查和测试环境'],['法律数据与专业测试','可变','4–6','俄罗斯法源、合同和专家验收'],['工具与风险预留','预留','1','开发工具及不可预见支出']]},
- {id:'2026-09',num:'6.3',name:'9 月',phase:'质量内测与仲裁辅助',goal:'以 300 份以上俄语及双语文件开展系统内测，提升合同审查质量，完成仲裁辅助和段落级双语处理初版。',budget:'45–65 万元',known:'45–65',countries:'俄罗斯增强；哈萨克斯坦、乌兹别克斯坦起步',budgetFocus:'稳定性测试、专业标注、仲裁辅助和安全加固',
+ budgetRows:[['研发与职能人员','固定','36–53','软件、Agent系统、测试、运维及产品、算法、法律数据、法务、行政'],['模型、文字识别与云服务','可变','15–22','解析、翻译、审查和测试环境'],['法律数据与工具一次性','一次性','7–11','俄罗斯法源、合同样本与开发工具']]},
+ {id:'2026-09',num:'6.3',name:'9 月',phase:'质量内测与仲裁辅助',goal:'以 300 份以上俄语及双语文件开展系统内测，提升合同审查质量，完成仲裁辅助和段落级双语处理初版。',budget:'64–94 万元',known:'64–94',countries:'俄罗斯增强；哈萨克斯坦、乌兹别克斯坦起步',budgetFocus:'稳定性测试、专业标注、仲裁辅助和安全加固',
  metrics:[['测试语料','300+ 俄语及双语文件'],['测试规模','300–500 份'],['风险准确率','>80%'],['高风险要求','严重风险不得漏检']],
  weeks:[['第 1 周','测试集与质量基线',['按所属国别、合同类别、扫描质量和风险难度建立 300—500 份稳定性测试集','由法律专家完成核心样本标注、分歧处理和验收说明','建立漏检、误报、伪造引用、错法域、翻译偏差和格式错误分类','冻结质量基线并设置版本上线验收条件']],['第 2 周','合同审查质量提升',['逐项处理高风险漏检，解释并压缩可接受范围内的误报','对法律依据、建议和原文位置进行交叉核验','将系统错误、模型错误和数据错误转换为面向客户的可理解提示','所有修复完成后运行全量稳定性测试，禁止局部通过即上线']],['第 3 周','仲裁辅助与双语生成',['提取当事人、请求、金额、事实、理由、证据和程序节点','生成案件时间线、缺失材料和律师确认问题','依据已确认规则生成申请书或答辩文书的双语底稿','实现法律文本逐段翻译、术语锁定和中俄段落对齐']],['第 4 周','安全加固与试用版本冻结',['完善客户数据隔离、文件权限、日志、失败重试和版本回退','开展真实用户路径、浏览器兼容和接口稳定性测试','输出国别专属能力清单、已知限制和强制人工复核规则','冻结十月种子客户试用版本']],
  ],
  agents:[['评测与回归','300+ 文件、300–500 份稳定性测试','分层质量报告','严重风险不得漏检'],['合同审查增强','风险、证据、建议和原文位置','可解释审查报告','准确率 >80%'],['仲裁辅助','事实提取、规则匹配和文书底稿','时间线、材料清单和双语底稿','律师逐项确认'],['双语段落处理','段落对齐、术语与实体锁定','中俄逐段对照文本','关键实体和数字一致']],
  gates:['风险识别准确率达到 80% 以上','严重风险无漏检','原始系统路径和技术错误不向客户暴露','客户数据隔离、文件权限和回退通过测试'],
- budgetRows:[['研发人员','固定','28–38','软件、Agent系统、测试、运维与质量冲刺'],['模型、文字识别与评测算力','可变','10–16','300—500 份稳定性测试和多模型比较'],['法律与俄语标注','可变','5–8','专家标注、双语审核和分歧裁决'],['测试与风险预留','预留','2–3','兼容、安全和故障处理']]},
- {id:'2026-10',num:'6.4',name:'10 月',phase:'真实客户试用与发布准备',goal:'在 3—5 家律所或企业法务团队中开展真实案件试用，根据实际使用持续改进，并完成北京论坛发布准备。',budget:'50–72 万元',known:'50–72',countries:'俄罗斯及前期国别试用；其余三国启动',budgetFocus:'客户试用、问题响应、六国适配和论坛准备',
+ budgetRows:[['研发与职能人员','固定','40–58','软件、Agent系统、测试、运维与质量冲刺及职能团队'],['模型、评测算力与标注','可变','16–24','300—500 份稳定性测试、多模型比较与专家标注'],['测试环境与风险预留','一次性','8–12','兼容、安全、故障处理与评测环境']]},
+ {id:'2026-10',num:'6.4',name:'10 月',phase:'真实客户试用与发布准备',goal:'在 3—5 家律所或企业法务团队中开展真实案件试用，根据实际使用持续改进，并完成北京论坛发布准备。',budget:'55–82 万元',known:'55–82',countries:'俄罗斯及前期国别试用；其余三国启动',budgetFocus:'客户试用、问题响应、六国适配和论坛准备',
  metrics:[['试用客户','3–5 家'],['严重问题','48 小时内处理'],['演示案例','3 份合同 + 1 个仲裁案'],['完整彩排','至少 5 次']],
  weeks:[['第 1 周','客户试用启动',['为每家客户建立独立工作空间、权限、数据授权和成功指标','安排日常跟进，记录每次审查的接受、修改、拒绝和原因','验证邮件接入、任务提醒、文件流转和双语报告的实际使用','未经授权的客户数据不得用于训练或对外展示']],['第 2 周','试用问题处理流程',['建立严重、一般和优化建议三级问题管理机制','严重问题在 48 小时内修复或提供可执行的替代方案','一般问题按周合并发布，所有变更必须通过稳定性测试','将律师修改转化为疑难样本和测试，不直接混入训练数据']],['第 3 周','六国能力扩展与成本复盘',['分别建立吉尔吉斯斯坦、塔吉克斯坦和土库曼斯坦法源登记册','配置语言、术语、优先合同、国别隔离和不支持场景','统计每个客户、国别和任务的模型用量、文字识别、响应时间及人工复核工时','形成单位合同成本和各国专业投入估计']],['第 4 周','北京论坛演示准备',['建立独立演示环境，选择 3 份俄语合同和 1 个仲裁案例','准备在线、离线和故障降级三套演示方案','至少完成 5 次全流程彩排并明确现场责任人','冻结发布候选版本，除严重问题外不再临时变更']],
  ],
  agents:[['试用反馈处理流程','真实案件、律师修订和客户意见','问题清单与疑难样本库','具体客户、对应国别和版本号可追溯'],['六国法域识别','精准识别国别并自动加载对应知识与规则','法域结果和不确定提示','不确定时询问或存疑不答'],['后三国起步能力','法源、术语、规则和测试样本','三套隔离能力包','当地专家完成首轮确认'],['论坛演示流程','合同审查、双语报告和仲裁辅助','独立演示环境和故障方案','5 次完整彩排通过']],
  gates:['3—5 家真实客户开始试用','严重问题 48 小时内得到处理','客户数据授权和用途清晰','论坛演示不依赖单一网络或模型'],
- budgetRows:[['研发人员','固定','30–42','软件、Agent系统、测试、运维和客户支持'],['试用环境与模型资源','可变','10–16','真实案件、隔离空间和稳定性测试'],['客户支持与法律复核','可变','6–9','现场跟进、六国专家和案例审核'],['演示准备与风险预留','预留','4–5','独立环境、彩排和故障保障']]},
- {id:'2026-11',num:'6.5',name:'11 月',phase:'北京论坛发布与商业验证',goal:'在北京论坛完成稳定、可审计的中俄双语法律工作演示，形成首批付费或深度试用客户，并启动小规模商业运营。',budget:'55–80 万元',known:'55–80',countries:'六国能力分级发布',budgetFocus:'发布保障、容量扩展、客户转化和专业验收',
+ budgetRows:[['研发与职能人员','固定','28–41','软件、Agent系统、测试、运维、客户支持及职能团队'],['试用环境、模型与专家复核','可变','19–29','真实案件、隔离空间、稳定性测试与六国专家复核'],['演示准备与风险预留','一次性','8–12','独立演示环境、彩排与故障保障']]},
+ {id:'2026-11',num:'6.5',name:'11 月',phase:'北京论坛发布与商业验证',goal:'在北京论坛完成稳定、可审计的中俄双语法律工作演示，形成首批付费或深度试用客户，并启动小规模商业运营。',budget:'55–90 万元',known:'55–90',countries:'六国能力分级发布',budgetFocus:'发布保障、容量扩展、客户转化和专业验收',
  metrics:[['现场演示','数分钟内完成合同审查'],['客户目标','5–10 家付费或深度试用'],['商业材料','视频、案例与一页说明'],['运行原则','按实测结果披露容量']],
  weeks:[['第 1 周','发布候选版本验收',['逐国说明正式支持、试验支持和暂不支持的能力范围','执行全量权威验收样本和稳定性测试，锁定模型、法源、术语和指令规则版本','确认现场案例的数据授权、匿名处理和披露边界','完成质量、隐私、安全、容量和回退验收']],['第 2 周','北京论坛正式发布',['现场上传俄语合同，在数分钟内展示中文风险报告和原文位置','切换至俄文视图，展示相同结论、俄文摘要和双语沟通','由合作律所说明真实使用案例和律师复核机制','同步发布演示视频、案例说明和产品一页介绍']],['第 3 周','客户验证与报价',['为高意向客户提供受控的真实样本验证','提供按次审查、年度订阅和私有化部署三类报价方案','明确支持的国别、质量标准、服务承诺、数据和责任边界','目标锁定至少 5 家客户，形成合同或明确推进计划']],['第 4 周','商业试运行与稳定性复盘',['监控 Agent系统失败、翻译错误、错法域、成本异常和客户反馈','根据实测结果优化处理方式和扩容，不作未经验证的承载量承诺','建立客户运营跟进、问题响应和版本发布机制','确定十二月规模接入和私有化交付优先级']],
  ],
  agents:[['发布能力控制','六国成熟度、国别发行版本和范围声明','逐国能力清单','试验能力不得包装为商用'],['现场合同审查','俄语合同到中俄双语结果','审查报告与完整证据链','在线与离线方案均可完成'],['销售验证','真实样本、价格和部署测算','验证报告与报价范围','客户数据保持隔离'],['运行监控','质量、成本、响应时间和资源异常','发布日报与回退方案','容量数据以实测为准']],
  gates:['论坛演示完成 5 次以上彩排','六国能力逐国如实披露','锁定至少 5 家付费或深度试用客户','发布后严重问题具备快速响应机制'],
- budgetRows:[['研发人员','固定','32–45','软件、Agent系统、测试、运维和客户运营'],['云服务与模型容量','可变','12–22','论坛峰值、客户验证和弹性扩展'],['安全、法律与客户运营','可变','7–9','专业验收、安全保障和客户转化'],['演示与应急预留','预留','4','现场保障和突发资源需求']]},
- {id:'2026-12',num:'6.6',name:'12 月',phase:'规模接入与私有化交付',goal:'标准化客户接入、私有化部署和客户运营，继续完善仲裁辅助，形成六国年度复盘及下一年度路线图。',budget:'48–70 万元',known:'48–70',countries:'六国强化与年度复盘',budgetFocus:'标准接入、私有化、客户运营和年度优化',
+ budgetRows:[['研发与职能人员','固定','33–49','软件、Agent系统、测试、运维、客户运营及职能团队'],['云弹性容量、模型与客户验证','可变','16–31','论坛峰值按小时弹性突发、客户验证与扩展'],['发布与现场应急预留','一次性','6–10','复用 10 月演示与彩排成果，仅留发布现场应急']]},
+ {id:'2026-12',num:'6.6',name:'12 月',phase:'规模接入与客户扩展',goal:'标准化客户接入、私有化部署和客户运营，继续完善仲裁辅助，形成六国年度复盘及下一年度路线图。',budget:'50–80 万元',known:'50–80',countries:'六国强化与年度复盘',budgetFocus:'标准接入、私有化、客户运营和年度优化',
  metrics:[['客户接入','3 天内完成'],['私有化','形成可交付方案'],['运营看板','使用、成本、质量和转化'],['年度成果','六国逐项复盘']],
  weeks:[['第 1 周','标准化客户接入',['将具体国别、合同类型、术语、审批和权限形成可复用配置清单','准备账号开通、数据导入、培训、验收和支持材料','建立 Agent系统版本、法源快照和数据迁移记录','实现新客户 3 天内完成基本接入和使用培训']],['第 2 周','私有化部署方案',['形成安装、配置、备份、恢复、日志、监控和升级说明','区分云端模型、本地模型、混合方案和完全离线的能力边界','在目标环境运行相同权威验收样本集，比较质量、响应时间与成本','明确客户运维和通律智能维保责任']],['第 3 周','仲裁与运营能力迭代',['根据试用反馈完善仲裁信息提取、时间线和双语文书底稿','建设客户使用量、模型成本、审查质量和商业转化看板','按国别复盘数据量、专家工时、真实使用和收入机会','补强高频合同、专业术语和重点疑难样本']],['第 4 周','年度总结与下一阶段规划',['分析模型、文字识别、检索、云资源和人工复核的单位成本','冻结年度稳定版本并归档数据说明、优化方案和评测报告','形成软件、数据、Agent系统和商业四条下一年度路线','向合作方提交效果、预算差异和下一阶段投资建议']],
  ],
  agents:[['客户配置','按客户加载特定国别法源、术语与审查规则','可版本化客户配置','客户之间完全隔离'],['私有化运行','本地或混合模型、知识库和日志','部署清单与权威验收样本验证','质量不低于约定门槛'],['运营与成本分析','使用量、模型成本、质量和转化','经营与质量看板','数据可追溯'],['六国年度规划','逐国质量、数据和商业复盘','下一年度优先级','依据实际证据排序']],
  gates:['新客户 3 天内完成基本接入','私有化环境通过同一套权威验收样本测试','六国分别完成年度复盘','预算差异和下一年度投资建议获确认'],
- budgetRows:[['研发人员','固定','30–40','软件、Agent系统、测试、运维和客户运营'],['云服务与私有化资源','可变','9–16','客户增长、部署验证和备份恢复'],['客户运营与法律支持','可变','5–8','培训、运营、六国复盘和专业验收'],['工具与风险预留','预留','4–6','持续优化和不可预见支出']]}
+ budgetRows:[['研发与职能人员','固定','30–51','软件、Agent系统、测试、运维、客户运营及职能团队'],['客户运营、私有化与按需算力','可变','17–25','客户增长、部署验证与按需算力，私有化按签约量触发'],['持续优化与风险预留','预留','3–4','持续优化与不可预见支出']]}
 ];
 
 const countries=[
@@ -432,23 +476,37 @@ document.addEventListener('click',e=>{
 document.querySelector('#menu').addEventListener('click',()=>document.querySelector('#rail').classList.toggle('open'));
 const PDF_NAME='通律智能-中俄双语智能法律协作系统-合作计划书.pdf';
 function addImagePaged(pdf,canvas,isFirst){
- const PW=210,PH=297,scaleMM=PW/canvas.width;       // 画布像素 → A4 毫米
+ const PW=210,PH=297,MT=10,MB=12,availH=PH-MT-MB;   // 上/下预留页眉页脚空间(mm)
+ const scaleMM=PW/canvas.width;                      // 画布像素 → A4 毫米
  const fullH=canvas.height*scaleMM;
- if(fullH<=PH+1){                                    // 一页放得下，整页贴入
+ if(fullH<=availH+1){                                // 一页放得下，留出上下边距贴入
   if(!isFirst) pdf.addPage();
-  pdf.addImage(canvas.toDataURL('image/jpeg',0.96),'JPEG',0,0,PW,fullH);
+  pdf.addImage(canvas.toDataURL('image/jpeg',0.96),'JPEG',0,MT,PW,fullH);
   return;
  }
- const sliceMaxPx=Math.floor(canvas.width*PH/PW);    // 单张 A4 对应的画布像素高度
- let y=0,slice=0;
+ const ctx=canvas.getContext('2d');
+ const pageMaxPx=Math.floor(canvas.width*availH/PW); // 单页可用高度对应的画布像素
+ const blankRow=(data,w)=>{                           // 采样判断整行是否接近全白
+  for(let x=0;x<w;x+=6){const i=x*4;if(data[i]<248||data[i+1]<248||data[i+2]<248)return false;}
+  return true;
+ };
+ let y=0,first=true;
  while(y<canvas.height){
-  const h=Math.min(sliceMaxPx,canvas.height-y);
+  let h=Math.min(pageMaxPx,canvas.height-y);
+  if(y+h<canvas.height){                              // 非最后一段：上移到一条空白行再切，避免切断文字
+   const back=Math.min(Math.floor(pageMaxPx*0.3),h-1);
+   const strip=ctx.getImageData(0,y+h-back,canvas.width,back).data;
+   for(let r=back-1;r>=0;r--){
+    const off=r*canvas.width*4;
+    if(blankRow(strip.subarray(off,off+canvas.width*4),canvas.width)){h-=(back-1-r);break;}
+   }
+  }
   const c=document.createElement('canvas');c.width=canvas.width;c.height=h;
-  const ctx=c.getContext('2d');ctx.fillStyle='#ffffff';ctx.fillRect(0,0,c.width,c.height);
-  ctx.drawImage(canvas,0,y,canvas.width,h,0,0,canvas.width,h);
-  if(!(isFirst&&slice===0)) pdf.addPage();
-  pdf.addImage(c.toDataURL('image/jpeg',0.96),'JPEG',0,0,PW,h*scaleMM);
-  y+=h;slice++;
+  const cx=c.getContext('2d');cx.fillStyle='#ffffff';cx.fillRect(0,0,c.width,c.height);
+  cx.drawImage(canvas,0,y,canvas.width,h,0,0,canvas.width,h);
+  if(!(isFirst&&first)) pdf.addPage();
+  pdf.addImage(c.toDataURL('image/jpeg',0.96),'JPEG',0,MT,PW,h*scaleMM);
+  y+=h;first=false;
  }
 }
 async function exportPDF(){
@@ -468,6 +526,8 @@ async function exportPDF(){
    const canvas=await html2canvas(pages[i],{scale:2,useCORS:true,backgroundColor:'#ffffff',windowWidth:794});
    addImagePaged(pdf,canvas,i===0);
   }
+  const total=pdf.getNumberOfPages();                // 页脚页码（落在预留的下边距内）
+  for(let p=1;p<=total;p++){pdf.setPage(p);pdf.setFontSize(8);pdf.setTextColor(150,150,150);pdf.text(p+' / '+total,105,290,{align:'center'});}
   pdf.save(PDF_NAME);
  }catch(e){
   console.error(e);alert('PDF 生成失败，已改用浏览器打印另存。');window.print();
